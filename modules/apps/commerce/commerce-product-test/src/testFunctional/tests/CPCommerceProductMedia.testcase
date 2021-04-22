@@ -181,7 +181,6 @@ definition {
 		Button.clickSaveAsDraft();
 
 		Alert.viewSuccessMessage();
-		
 	}
 
 	@description = "This is a test for COMMERCE-6033. RemoveAnAttachment"
