@@ -60,21 +60,20 @@ definition {
 		property portal.acceptance = "false";
 
 		CommerceAccelerators.initializeNewSiteViaAccelerator(siteName = "Minium");
-        
+
 		ApplicationsMenu.gotoSite(site = "Minium");
-        
+
 		CommerceNavigator.gotoMiniumSidebarItem(menuItem = "Account Management");
-        
+
 		CommerceAcceleratorsInitializer.createNewAccountViaFront(
-            accountName = "Commerce Account",
-            adminEmailAddress = "test@liferay.com");
-        
+			accountName = "Commerce Account",
+			adminEmailAddress = "test@liferay.com");
+
 		CommerceNavigator.gotoMiniumSidebarItem(menuItem = "Catalog");
-        
+
 		Click.clickNoMouseOver(locator1 = "CommerceAccelerators#ACCOUNT_SELECTOR_DROPDOWN");
 
-        AssertElementPresent(locator1 = "CommerceAccelerators#ACCOUNT_SELECTOR_DROPDOWN_MENU_SELECTED_ACCOUNT");	
-
+		AssertElementPresent(locator1 = "CommerceAccelerators#ACCOUNT_SELECTOR_DROPDOWN_MENU_SELECTED_ACCOUNT");
 	}
 
 	@description = "COMMERCE-5927. As a buyer, I want to be able to select an account from the list (which is not the selected one), and have the selected account change to the newly selected account"
