@@ -153,6 +153,21 @@
 	<td>//select[contains(@id, "currentAssetTypes")]/option[contains(., "${assetType}")]</td>
 	<td></td>
 </tr>
+<tr>
+	<td>GLOBAL_SEARCH_BAR</td>
+	<td>//input[@ref='searchInput']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACCOUNT_SEARCH_SUGGESTION</td>
+	<td>//div[contains(@class,'commerce-item__content') and contains(.,'${key_entryName}')]</td>
+	<td></td>
+</tr>
+<tr>
+    <td>CLEAN_SEARCH</td>
+    <td>//button[contains(@class,'commerce-search__button ')]</td>
+    <td></td>
+</tr>
 </tbody>
 </table>
 </body>
