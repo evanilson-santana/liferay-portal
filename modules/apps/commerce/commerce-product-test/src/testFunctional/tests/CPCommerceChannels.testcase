@@ -710,8 +710,6 @@ definition {
 			key_productName = "",
 			key_Value = "Catalog",
 			locator1 = "CommerceEntry#VALUE_PRODUCT_RELATIONS");
-
-			
 	}
 
 	@description = "This is a test for COMMERCE-6122. EditConfigurationRemoteTaxCalculation"
