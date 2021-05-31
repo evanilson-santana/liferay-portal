@@ -54,6 +54,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>ACCOUNT_SELECTOR_DROPDOWN_MENU_SELECTED_ENTRY_NAME</td>
+	<td>//div[contains(@class,'item-list-head')]//span[contains(text(),'${key_accountName}')]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>ACCOUNT_SELECTOR_DROPDOWN_BACK_BUTTON</td>
 	<td>//div[contains(@class,'item-list-head')]/button</td>
 	<td></td>
