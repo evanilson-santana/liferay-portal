@@ -39,7 +39,6 @@ definition {
 		Click(locator1 = "WorkflowMetrics#FILTER_CLEAR_ALL");
 
 		AssertElementNotPresent(locator1 = "WorkflowMetrics#FILTER_CLEAR_ALL");
-
 	}
 
 }
