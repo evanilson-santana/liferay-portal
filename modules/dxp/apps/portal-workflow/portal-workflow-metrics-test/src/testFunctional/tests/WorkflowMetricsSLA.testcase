@@ -320,7 +320,6 @@ definition {
 	@description = "LPS-89016 - Verify that the warning alert will be displayed again when user enters the metrics page again after closing it"
 	@priority = "2"
 	test WarningAlertIsDisplayedAgainWhenClosed {
-
 		WorkflowMetrics.goToWorkflowProcessMetrics(workflowProcessName = "Single Approver");
 
 		AssertElementPresent(locator1 = "WorkflowMetrics#METRICS_NO_SLA_MESSAGE");
@@ -332,7 +331,6 @@ definition {
 		WorkflowMetrics.goToWorkflowProcessMetrics(workflowProcessName = "Single Approver");
 
 		AssertElementPresent(locator1 = "WorkflowMetrics#METRICS_NO_SLA_MESSAGE");
-
 	}
 
 	@description = "LPS-89016 - Verify and click on the warning alert when there is no SLA"
