@@ -205,7 +205,12 @@
 </tr>
 <tr>
 	<td>METRICS_NO_SLA_MESSAGE</td>
-	<td>//div[contains(., 'No SLAs are defined for this process.')]</td>
+	<td>//div[contains(text(), 'No SLAs are defined for this process.')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>METRICS_NO_SLA_MESSAGE_BUTTON_CLOSE</td>
+	<td>//button[@aria-label = 'Close']</td>
 	<td></td>
 </tr>
 <tr>
