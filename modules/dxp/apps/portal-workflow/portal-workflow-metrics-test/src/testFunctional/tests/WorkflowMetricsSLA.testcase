@@ -193,7 +193,6 @@ definition {
 		AssertElementNotPresent(
 			locator1 = "WorkflowMetricsSLA#SLA_DROPDOWN_STOP_OPTION",
 			slaDefinitionEnd = "Process Begins");
-			
 	}
 
 	@description = "LPS-89015 - Verify that the same task can't be selected in Start or Stop and Pause fields simultaneously"
