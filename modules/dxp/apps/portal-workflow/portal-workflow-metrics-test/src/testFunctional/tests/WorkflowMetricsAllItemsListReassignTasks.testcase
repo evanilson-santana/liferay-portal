@@ -41,7 +41,6 @@ definition {
 	@description = "LPS-106219 - Verify that, in the modal Select Tasks to Reassign, the Assignee filter contains only the options that are displayed in the modal"
 	@priority = "3"
 	test AssigneeFilterContainsOnlyOptionDisplayedInModal {
-
 		ApplicationsMenu.gotoPortlet(
 			category = "Workflow",
 			panel = "Applications",
@@ -60,17 +59,15 @@ definition {
 			panel = "Site Administration",
 			portlet = "Blogs");
 
-
 		Blogs.addWithWorkflow(
-			entryTitle = "Blogs Entry 1",
+			entryContent = "Content 1",
 			entrySubtitle = "Subtitle 1",
-			entryContent = "Content 1");
-
+			entryTitle = "Blogs Entry 1");
 
 		Blogs.addWithWorkflow(
-			entryTitle = "Blogs Entry 2",
+			entryContent = "Content 2",
 			entrySubtitle = "Subtitle 2",
-			entryContent = "Content 2");
+			entryTitle = "Blogs Entry 2");
 
 		WorkflowMetrics.goToWorkflowAllItems(workflowProcessName = "Single Approver");
 
@@ -89,7 +86,6 @@ definition {
 		AssertElementPresent(
 			key_processName = "Unassigned",
 			locator1 = "WorkflowReassignModal#PROCESS_STEP_DROPDOWN_OPTION");
-
 	}
 
 	@description = "LPS-106219 - Verify that when all items are selected to be reassigned in a filtered All Items page, the bulk modal is considering the filter results"
