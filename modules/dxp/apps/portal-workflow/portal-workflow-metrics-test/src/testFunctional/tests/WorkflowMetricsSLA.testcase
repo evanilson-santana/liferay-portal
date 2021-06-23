@@ -866,8 +866,6 @@ definition {
 			key_columnName = "Status",
 			key_fieldName = "Running",
 			locator1 = "WorkflowMetricsProcessListView#ASSERT_SLA_INFO");
-
-			
 	}
 
 	@description = "LPS-94760 - Verify that date format abbreviates the month and doesn't show year. (Example: Apr 25)"
