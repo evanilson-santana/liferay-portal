@@ -182,7 +182,6 @@ definition {
 			assigneeName = "Test Test",
 			tabName = "Overdue",
 			taskCount = "0");
-			
 	}
 
 	@description = "LPS-103365 - Verify that when the filters inside (Workload by Assignee) page are higher than 496px, a search bar on it should be included"
