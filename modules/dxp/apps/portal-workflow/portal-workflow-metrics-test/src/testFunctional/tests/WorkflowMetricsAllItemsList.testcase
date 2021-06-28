@@ -228,8 +228,6 @@ definition {
 		AssertElementPresent(
 			key_allItemsFilterName = "Assignee",
 			locator1 = "WorkflowAllItems#WORKFLOW_ALL_ITEMS_FILTER_BY");
-
-			
 	}
 
 	@description = "LPS-86652 - Verify that hovering the cursor on a ellipsis text will display a tooltip that contains the rest of the text"
