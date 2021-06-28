@@ -354,8 +354,6 @@ definition {
 		Click(locator1 = "WorkflowAllItems#DUE_DATE_COLUMN");
 
 		AssertElementPresent(locator1 = "WorkflowAllItems#DUE_DATE_ICON");
-
-		
 	}
 
 	@description = "LPS-130217 - Verify that the page provides loading feedback when the table is being updated according to order options"
