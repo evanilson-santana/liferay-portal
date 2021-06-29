@@ -11,9 +11,9 @@
 
 <tbody>
 <tr>
-    <td>SEARCH_FIELD</td>
-    <td>//input[@placeholder='Search for']</td>
-    <td></td>
+	<td>SEARCH_FIELD</td>
+	<td>//input[@placeholder='Search for']</td>
+	<td></td>
 </tr>
 <tr>
 	<td>VALIDATE_SEARCH_RESULTS_BAR</td>
