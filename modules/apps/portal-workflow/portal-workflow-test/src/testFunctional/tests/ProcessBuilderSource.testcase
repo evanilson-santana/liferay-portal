@@ -45,7 +45,6 @@ definition {
 	@description = "Verify that, when importing a non XML file, an error message is displayed and the Workflow is not published"
 	@priority = "4"
 	test CanImportNonXMLFile {
-
 		ApplicationsMenu.gotoPortlet(
 			category = "Workflow",
 			panel = "Applications",
