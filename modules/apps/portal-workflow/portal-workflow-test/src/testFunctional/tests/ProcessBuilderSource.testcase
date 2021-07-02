@@ -144,7 +144,6 @@ definition {
 	@description = "Verify that the user can select Permissions option in the kebab for a particular definition"
 	@priority = "3"
 	test CanSelectPermissions {
-
 		ApplicationsMenu.gotoPortlet(
 			category = "Workflow",
 			panel = "Applications",
@@ -157,9 +156,8 @@ definition {
 		MenuItem.clickNoError(menuItem = "Permissions");
 
 		AssertElementPresent(
-			value1 = "Permissions",
-			locator1 = "Modal#HEADER");
-
+			locator1 = "Modal#HEADER",
+			value1 = "Permissions");
 	}
 
 	@description = "Verify that the user can select Unpublish option in the kebab menu for a particular definition"
