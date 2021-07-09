@@ -109,20 +109,19 @@ definition {
 	@description = "Verify that the user can rename a Node"
 	@priority = "4"
 	test CanRenameNode {
-
 		ApplicationsMenu.gotoPortlet(
 			category = "Workflow",
 			panel = "Applications",
 			portlet = "Process Builder");
-		
+
 		LexiconEntry.gotoAdd();
-		
+
 		KaleoDesigner.addNodeViaViewTab(
 			nodeDescription = "Condition Description",
 			nodeName = "Condition Update",
 			nodeNodeLabel = "Condition",
 			nodeType = "condition");
-		
+
 		PortletEntry.inputTitle(title = "Test 1");
 
 		Workflow.saveDefinition();
@@ -136,8 +135,6 @@ definition {
 		AssertTextEquals(
 			locator1 = "DDMEditStructure#SETTINGS_NAME",
 			value1 = "Condition Update");
-
-
 	}
 
 	@description = "Verify that user can Save workflow as Draft"
