@@ -298,7 +298,6 @@ definition {
 	@description = "Verify that transition can be connected to another edge of node, orange circle will appear"
 	@priority = "5"
 	test TransitionCanBeConnectedToNode {
-
 		ApplicationsMenu.gotoPortlet(
 			category = "Workflow",
 			panel = "Applications",
@@ -323,9 +322,7 @@ definition {
 			nodeType = "start",
 			nodeTypeDestination = "task");
 
-		AssertElementPresent(locator1 = "KaleoDesignerEditWorkflow#CIRCLE_ORANGE_CONNECTOR");	
-		
-
+		AssertElementPresent(locator1 = "KaleoDesignerEditWorkflow#CIRCLE_ORANGE_CONNECTOR");
 	}
 
 }
