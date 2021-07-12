@@ -31,7 +31,6 @@ definition {
 	@description = "Verify can filter by completed tasks"
 	@priority = "3"
 	test CanFilterByCompletedTasks {
-
 		ApplicationsMenu.gotoPortlet(
 			category = "Workflow",
 			panel = "Applications",
@@ -86,7 +85,7 @@ definition {
 		AssertElementPresent(
 			key_workflowAssetTitle = "Blogs Entry 1",
 			locator1 = "MyWorkflowTasks#TABLE_GENERIC_ASSET_TITLE");
-		
+
 		AssertElementNotPresent(
 			key_workflowAssetTitle = "Blogs Entry 2",
 			locator1 = "MyWorkflowTasks#TABLE_GENERIC_ASSET_TITLE");
@@ -102,12 +101,11 @@ definition {
 		AssertElementPresent(
 			key_workflowAssetTitle = "Blogs Entry 1",
 			locator1 = "MyWorkflowTasks#TABLE_GENERIC_ASSET_TITLE");
-		
+
 		AssertElementNotPresent(
 			key_workflowAssetTitle = "Blogs Entry 2",
 			locator1 = "MyWorkflowTasks#TABLE_GENERIC_ASSET_TITLE");
-
-	}	
+	}
 
 	@description = "Verify can filter by pending tasks"
 	@ignore = "Test Stub"
