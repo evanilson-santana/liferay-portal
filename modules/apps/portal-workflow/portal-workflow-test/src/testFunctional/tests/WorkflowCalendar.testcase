@@ -202,8 +202,6 @@ definition {
 			workflowResourceValue = "Calendar Event");
 
 		Alert.viewSuccessMessage();
-
-		
 	}
 
 	@description = "This is a use case for LPS-59572."
