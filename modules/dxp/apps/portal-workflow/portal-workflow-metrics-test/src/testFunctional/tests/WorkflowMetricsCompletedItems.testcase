@@ -378,8 +378,6 @@ definition {
 			key_ontime = "0",
 			key_overdue = "0",
 			key_untracked = "0");
-
-			
 	}
 
 	@description = "LPS-94146 - Verify that the percentage is displayed in Overdue, On Time and Untracked cards"
