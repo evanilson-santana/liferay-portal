@@ -385,8 +385,6 @@ definition {
 		Workflow.assignByDetails(user = "usersn (userfn userln)");
 
 		Alert.viewSuccessMessageText(successMessage = "Your request completed successfully.");
-
-		
 	}
 
 	@description = "Verify that the user is able to Reverse Sort Direction by clicking the icon"
