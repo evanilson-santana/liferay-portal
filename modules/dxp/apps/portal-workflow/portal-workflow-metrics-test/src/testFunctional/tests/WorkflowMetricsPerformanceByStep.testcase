@@ -48,11 +48,16 @@ definition {
 	}
 
 	@description = "LPS-101075 - Verify that the filter is available on the card in the Performance tab"
-	@ignore = "Test Stub"
 	@priority = "5"
 	test CanFilterTopStepsByWorkflowVersion {
 
-		// TODO LRQA-68922 CanFilterTopStepsByWorkflowVersion pending implementation
+		WorkflowMetrics.goToWorkflowProcessMetrics(workflowProcessName = "Single Approver");
+
+		Click(locator1 = "WorkflowMetrics#METRICS_PERFORMANCE_TAB");
+
+		AssertElementPresent(
+			value1 = "All Versions",
+			locator1 = "WorkflowMetrics#METRICS_PERFORMANCE_BY_STEP_RANGE_DROPDOWN");
 
 	}
 
