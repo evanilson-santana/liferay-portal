@@ -104,11 +104,36 @@ definition {
 	}
 
 	@description = "LPS-101075 - Verify that when a specific version is chosen, the card only considers closed instances that are in the version chosen"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test CardConsidersClosedInstancesInChosenVersion {
 
-		// TODO LRQA-68929 CardConsidersClosedInstancesInChosenVersion pending implementation
+		WorkflowMetrics.goToWorkflowProcessMetrics(workflowProcessName = "Single Approver");
+
+		WorkflowMetricsPerformanceByStep.viewPerformanceByStepTooltip();
+
+		WorkflowMetricsPerformanceByStep.viewPerformanceByStepValues(
+			avgCompletionTimeValue = "0min",
+			isNotPresent = "",
+			slaBreachedValue = "0 (0%)",
+			stepName = "Review");
+		
+		WorkflowMetricsPerformanceByStep.viewPerformanceByStepValues(
+			avgCompletionTimeValue = "0min",
+			isNotPresent = "",
+			slaBreachedValue = "0 (0%)",
+			stepName = "Update");
+		
+		Click(
+			key_dateRange = "All Version",
+			key_title = "Performance by Step",
+			locator1 = "WorkflowMetrics#METRICS_DATE_RANGE_DROPDOWN_BY_TITLE");
+		
+		Click(
+			value1 = "1.0",
+			key_dateRange = "1.0",
+			locator1 = "WorkflowMetricsPerformanceByStep#DATE_RANGE_DROPDOWN_OPTION");
+
+		AssertElementPresent(locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_NO_RESULTS");
 
 	}
 

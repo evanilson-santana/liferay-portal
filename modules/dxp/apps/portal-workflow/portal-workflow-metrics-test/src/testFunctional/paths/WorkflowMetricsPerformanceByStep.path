@@ -36,6 +36,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>METRICS_PERFORMANCE_BY_STEP_NO_RESULTS</td>
+	<td>//span[contains(text(), 'Performance by Step')]/../../../following-sibling::div//p[contains(text(),'There is no data at the moment.')]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>METRICS_PERFORMANCE_BY_STEP_PAGE_INPUT_FIELD</td>
 	<td>//input[contains(@placeholder, 'Search for Step Name')]</td>
 	<td></td>
