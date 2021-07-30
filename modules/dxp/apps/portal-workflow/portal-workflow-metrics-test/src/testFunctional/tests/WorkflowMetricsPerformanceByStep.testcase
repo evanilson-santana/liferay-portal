@@ -106,7 +106,6 @@ definition {
 	@description = "LPS-101075 - Verify that when a specific version is chosen, the card only considers closed instances that are in the version chosen"
 	@priority = "4"
 	test CardConsidersClosedInstancesInChosenVersion {
-
 		WorkflowMetrics.goToWorkflowProcessMetrics(workflowProcessName = "Single Approver");
 
 		WorkflowMetricsPerformanceByStep.viewPerformanceByStepTooltip();
@@ -116,25 +115,24 @@ definition {
 			isNotPresent = "",
 			slaBreachedValue = "0 (0%)",
 			stepName = "Review");
-		
+
 		WorkflowMetricsPerformanceByStep.viewPerformanceByStepValues(
 			avgCompletionTimeValue = "0min",
 			isNotPresent = "",
 			slaBreachedValue = "0 (0%)",
 			stepName = "Update");
-		
+
 		Click(
 			key_dateRange = "All Version",
 			key_title = "Performance by Step",
 			locator1 = "WorkflowMetrics#METRICS_DATE_RANGE_DROPDOWN_BY_TITLE");
-		
+
 		Click(
-			value1 = "1.0",
 			key_dateRange = "1.0",
-			locator1 = "WorkflowMetricsPerformanceByStep#DATE_RANGE_DROPDOWN_OPTION");
+			locator1 = "WorkflowMetricsPerformanceByStep#DATE_RANGE_DROPDOWN_OPTION",
+			value1 = "1.0");
 
 		AssertElementPresent(locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_NO_RESULTS");
-
 	}
 
 	@description = "LPS-100674 - Verify that the card Performance by Step has no more than 10 entries displayed"
