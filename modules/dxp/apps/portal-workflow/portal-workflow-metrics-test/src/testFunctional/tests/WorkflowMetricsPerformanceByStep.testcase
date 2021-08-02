@@ -216,7 +216,6 @@ definition {
 	@description = "LPS-101075 - Verify that the All Versions filter considers only the steps touched by the task"
 	@priority = "4"
 	test FilterConsidersStepsTouchedByTaks {
-
 		ApplicationsMenu.gotoPortlet(
 			category = "Workflow",
 			panel = "Applications",
@@ -247,7 +246,7 @@ definition {
 			workflowAssetTitle = "Blogs Entry",
 			workflowAssetType = "Blogs Entry",
 			workflowTask = "Review");
-		
+
 		LexiconEntry.gotoEllipsisMenuItem(menuItem = "Approve");
 
 		Workflow.confirmWorkflowAction();
@@ -272,7 +271,7 @@ definition {
 			category = "Workflow",
 			panel = "Applications",
 			portlet = "Process Builder");
-			
+
 		Workflow.viewWorkflowDefinition(workflowDefinitionTitle = "Single Approver");
 
 		Button.click(button = "Edit");
@@ -296,7 +295,7 @@ definition {
 			locator1 = "KaleoDesignerEditWorkflow#VIEW_FORM_NODE");
 
 		KaleoDesigner.editNodeName(nodeName = "update2");
-		
+
 		Button.clickUpdate();
 
 		WorkflowMetrics.goToWorkflowProcessMetrics(workflowProcessName = "Single Approver");
@@ -306,8 +305,6 @@ definition {
 		AssertElementNotPresent(
 			key_stepName = "Update",
 			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PAGE_TABLE_STEP_NAME");
-
-
 	}
 
 	@description = "LPS-130215 - Verify that, selecting all versions, the filter considers only the steps touched by the task"
