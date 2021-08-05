@@ -113,9 +113,6 @@ definition {
 		AssertElementPresent(
 			key_dateRange = "All Versions",
 			locator1 = "WorkflowMetricsPerformanceByStep#DATE_RANGE_DROPDOWN_OPTION");
-			
-
-
 	}
 
 	@description = "LPS-101075 - Verify that when a specific version is chosen, the card only considers closed instances that are in the version chosen"
