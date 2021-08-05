@@ -495,7 +495,6 @@ definition {
 	@description = "LPS-101075 - Verify that, when a task do not touch the workflow task, the step is not displayed for the specific version"
 	@priority = "5"
 	test StepIsNotDisplayedForSpecificVersion {
-
 		ApplicationsMenu.gotoPortlet(
 			category = "Workflow",
 			panel = "Applications",
@@ -508,7 +507,7 @@ definition {
 			workflowResourceValue = "Blogs Entry");
 
 		Navigator.openURL();
-		
+
 		ProductMenu.gotoPortlet(
 			category = "Content &amp; Data",
 			panel = "Site Administration",
@@ -594,8 +593,6 @@ definition {
 		AssertElementNotPresent(
 			key_stepName = "Update",
 			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PAGE_TABLE_STEP_NAME");
-
-
 	}
 
 	@description = "LPS-97667 - Verify that when there are tasks with average time smaller than 1 minute the average completion time is displayed"
