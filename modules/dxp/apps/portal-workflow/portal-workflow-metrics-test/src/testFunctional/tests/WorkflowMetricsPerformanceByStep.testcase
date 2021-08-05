@@ -194,8 +194,6 @@ definition {
 			isNotPresent = "",
 			slaBreachedValue = "0 (0%)",
 			stepName = "update2");
-
-			
 	}
 
 	@description = "LPS-130215 - Verify that the filter allows to see all version together"
