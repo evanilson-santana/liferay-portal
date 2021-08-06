@@ -34,8 +34,55 @@ definition {
 	@priority = "5"
 	test CanChooseEspecifcVersionOnPage {
 
-		// TODO LRQA-68933 CanChooseEspecifcVersionOnPage pending implementation
+		ApplicationsMenu.gotoPortlet(
+			category = "Workflow",
+			panel = "Applications",
+			portlet = "Process Builder");
 
+		Workflow.gotoEditWorkflowDefinition(workflowDefinitionTitle = "Single Approver");
+
+		Workflow.updateDefinition(workflowDefinitionTitle = "Single Approver Updated");
+
+		KaleoDesigner.addNodeViaViewTab(
+			nodeDescription = "State Node Description",
+			nodeName = "state",
+			nodeNodeLabel = "State",
+			nodeType = "state");
+
+		KaleoDesigner.selectNode(nodeNodeLabel = "created");
+
+		KaleoDesigner.addConnectorViaViewTab(
+			connectorName = "Connector 1",
+			nodeType = "start",
+			nodeTypeDestination = "state");
+
+		Button.clickUpdate();
+
+		WorkflowMetrics.goToWorkflowProcessMetrics(workflowProcessName = "Single Approver Update");
+
+		WorkflowMetricsPerformanceByStep.viewPerformanceByStepTooltip();
+
+		Click(
+			key_stepsNumber = "2",
+			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_CARD_VIEW_ALL_STEPS");
+
+		Click(
+			key_dateRange = "Process Version",
+			key_title = "",
+			locator1 = "WorkflowMetrics#METRICS_DATE_RANGE_DROPDOWN_BY_TITLE");		
+
+		AssertElementPresent(
+			key_dateRange = "1.0",
+			locator1 = "WorkflowMetricsPerformanceByStep#DATE_RANGE_DROPDOWN_OPTION");
+
+		AssertElementPresent(
+			key_dateRange = "2.0",
+			locator1 = "WorkflowMetricsPerformanceByStep#DATE_RANGE_DROPDOWN_OPTION");
+
+		AssertElementPresent(
+			key_dateRange = "3.0",
+			locator1 = "WorkflowMetricsPerformanceByStep#DATE_RANGE_DROPDOWN_OPTION");
+		
 	}
 
 	@description = "LPS-101075 - Verify that the filter offers an option for each existing version"
