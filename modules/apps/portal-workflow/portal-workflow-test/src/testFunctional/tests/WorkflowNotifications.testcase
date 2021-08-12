@@ -47,11 +47,109 @@ definition {
 	}
 
 	@description = "LPS-135888 - Verify that when the user delete the order, the notifications are not displayed"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test NotificationIsNotAvailableWhenOrderIsDeleted {
 
-		// TODO LRQA-69118 NotificationIsNotAvailableWhenOrderIsDeleted pending implementation
+		CommerceAccelerators.initializeNewSiteViaAccelerator(siteName = "Minium");
+
+		ApplicationsMenu.gotoPortlet(
+			category = "Accounts",
+			panel = "Applications",
+			portlet = "Accounts");
+
+		JSONAccountEntry.addAccountEntry(
+			accountEntryName = "Test",
+			accountEntryType = "Business");
+	
+		Refresh();
+
+		LexiconEntry.gotoEntryMenuItem(
+			menuItem = "Edit",
+			rowEntry = "Test");
+
+		Accounts.addNewUserToBusinessAccount(
+			accountName = "Test",
+			assigneeName = "userfn",
+			userEmailAddress = "userea@liferay.com",
+			userFirstName = "userfn",
+			userLastName = "userln",
+			userScreenName = "usersn_");
+
+		Accounts.gotoAssigneeTab(assigneeTab = "Roles");
+
+		LexiconEntry.gotoEntryMenuItem(
+			menuItem = "Assign Users",
+			rowEntry = "Account Administrator");
+
+		LexiconEntry.gotoAdd();
+
+		SelectFrame(
+			key_title = "Assign Users to Account Administrator",
+			locator1 = "IFrame#MODAL_ANY");
+
+		Search.searchCP(searchTerm = "userfn");
+
+		Check(
+			key_tableEntry = "userfn",
+			locator1 = "LexiconTable#TABLE_ENTRY_CHECKBOX");
+
+		SelectFrameTop();
+
+		Button.click(button = "Assign");
+
+		Alert.viewSuccessMessage();
+
+		ApplicationsMenu.gotoPortlet(
+			category = "Store Management",
+			panel = "Commerce",
+			portlet = "Channels");
+
+		CommerceNavigator.gotoTableListEntry(entryName = "Minium Portal");
+
+		Select(
+			key_title = "Buyer Order Approval Workflow",
+			locator1 = "CommerceEntry#CATALOGS_FORM",
+			value1 = "Single Approver (Version 1)");
+
+		Button.clickSave();
+
+		ApplicationsMenu.gotoSite(site = "Minium");
+
+		FrontStore.addInitializerProductToCart(
+			productName = "U-Joint",
+			productQuantity = "1");
+
+		FrontStore.addInitializerProductToCart(
+			productName = "Transmission Cooler Line Assembly",
+			productQuantity = "1");
+
+		CommerceNavigator.gotoMiniCart();
+
+		Button.click(button = "Review Order");
+
+		Button.click(button = "Submit");
+
+		Click(locator1 = "Icon#BODY_VERTICAL_ELLIPSIS");
+
+		MenuItem.clickNoError(menuItem = "Delete");
+
+		AssertConfirm.waitForConfirmation(value1 = "Are you sure you want to delete this? It will be deleted immediately.");
+
+		Alert.viewSuccessMessage();
+
+		Navigator.openURL();
+
+		UserBar.gotoDropdownItem(dropdownItem = "Notifications");
+
+		Click(
+			key_contentBody = "for review in the workflow.",
+			key_portletName = "Test Test",
+			key_publicationType = "sent you a Commerce Order",
+			locator1 = "Notifications#NOTIFICATIONS_TITLE");
+
+		AssertElementPresent(
+			value1 = "My Workflow Tasks is temporarily unavailable.",
+			locator1 = "Message#ERROR");
 
 	}
 
