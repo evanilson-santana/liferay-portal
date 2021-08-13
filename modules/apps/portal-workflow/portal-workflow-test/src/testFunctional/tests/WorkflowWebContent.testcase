@@ -38,7 +38,6 @@ definition {
 	@description = "Verify that the user can assign a a different Workflow to a Subfolder"
 	@priority = "4"
 	test CanAssignDifferentWorkflowToSubfolder {
-
 		WebContentFolder.addCP(
 			folderDescription = "WC Folder Description",
 			folderName = "WC Folder Name");
@@ -59,26 +58,25 @@ definition {
 			workflowRestriction = "Default Workflow");
 
 		Click(
-			locator1 = "WC#ENTRY_LIST_TITLE",
-			key_webContentTitle = "WC Subfolder Name");
+			key_webContentTitle = "WC Subfolder Name",
+			locator1 = "WC#ENTRY_LIST_TITLE");
 
 		WebContentNavigator.gotoAddCP();
-		
+
 		WebContent.addDraft(
-			webContentTitle = "Web Content Name",
-			webContentContent = "Web Content Content");
+			webContentContent = "Web Content Content",
+			webContentTitle = "Web Content Name");
 
 		PortletEntry.publish();
 
 		Click(
-			locator1 = "WC#ENTRY_LIST_TITLE",
-			key_webContentTitle = "Web Content Name");
-		
-		WebContent.viewStatus(
-			webContentTitle = "Web Content Name",
-			webContentStatus = "Approved",
-			webContentContent = "Web Content Content");
+			key_webContentTitle = "Web Content Name",
+			locator1 = "WC#ENTRY_LIST_TITLE");
 
+		WebContent.viewStatus(
+			webContentContent = "Web Content Content",
+			webContentStatus = "Approved",
+			webContentTitle = "Web Content Name");
 	}
 
 	@description = "Verify that the user can assign a Workflow to the Home folder"
