@@ -192,11 +192,99 @@ definition {
 	}
 
 	@description = "Verify that, when a Web Content is moved to a Folder, it's Workflow changes"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test MoveWebContentToFolderChangeItsWorkflow {
 
-		// TODO LRQA-69293 MoveWebContentToFolderChangeItsWorkflow pending implementation
+		Workflow.duplicateSingleApproverWorkflow(workflowName = "Copy of Single Approver");
+
+		Navigator.openURL();
+
+		ProductMenu.gotoPortlet(
+			category = "Content &amp; Data",
+			panel = "Site Administration",
+			portlet = "Web Content");
+
+		Workflow.configureWCWorkflowViaFolderInfo(workflowDefinition = "Single Approver");
+
+		WebContentNavigator.gotoAddCP();
+
+		WebContent.addDraft(
+			webContentContent = "Web Content Content",
+			webContentTitle = "Web Content Title");
+
+		Pause(locator1 = "1000");
+
+		PortletEntry.submitForPublication();
+
+		Click(
+			key_webContentTitle = "Web Content Title",
+			locator1 = "WC#ENTRY_LIST_TITLE");
+
+		WebContent.viewStatus(
+			webContentContent = "Web Content Content",
+			webContentStatus = "Pending",
+			webContentTitle = "Web Content Title");
+
+		WorkflowMetrics.goToDashboardAllItemsWithFilter(
+			workflowFilterOption = "PENDING",
+			workflowMetricsTab = "DASHBOARD",
+			workflowProcess = "Single Approver");
+
+		AssertElementPresent(
+			key_workflowItemSubject = "Web Content Article: Web Content Title",
+			locator1 = "WorkflowMetrics#METRICS_WORKFLOW_ALL_ITEMS_ITEM_SUBJECT");
+		
+		Navigator.openURL();
+
+		ProductMenu.gotoPortlet(
+			category = "Content &amp; Data",
+			panel = "Site Administration",
+			portlet = "Web Content");
+
+		WebContentFolder.addCP(
+			folderDescription = "WC Folder Description",
+			folderName = "WC Folder Title");
+
+		WebContentFolder.configureWorkflowCP(
+			folderName = "WC Folder Title",
+			workflowDefinition = "Copy of Single Approver",
+			workflowRestriction = "Default Workflow");
+
+		WebContent.moveToFolderCP(
+			webContentTitle = "Web Content Title",
+			folderName = "WC Folder Title");
+
+		UserBar.gotoDropdownItem(dropdownItem = "My Submissions");
+
+		Workflow.withdrawTaskByActions(
+			workflowAssetTitle = "Web Content Title",
+			workflowAssetType = "Web Content Article",
+			workflowDefinition = "Single Approver",
+			workflowTask = "Review");
+
+		ProductMenu.gotoPortlet(
+			category = "Content &amp; Data",
+			panel = "Site Administration",
+			portlet = "Web Content");
+
+		Click(
+			key_webContentTitle = "WC Folder Title",
+			locator1 = "WC#ENTRY_LIST_TITLE");
+
+		Click(
+			key_webContentTitle = "Web Content Title",
+			locator1 = "WC#ENTRY_LIST_TITLE");
+
+		PortletEntry.submitForPublication();
+
+		WorkflowMetrics.goToDashboardAllItemsWithFilter(
+			workflowFilterOption = "PENDING",
+			workflowMetricsTab = "DASHBOARD",
+			workflowProcess = "Copy of Single Approver");
+
+		AssertElementPresent(
+			key_workflowItemSubject = "Web Content Article: Web Content Title",
+			locator1 = "WorkflowMetrics#METRICS_WORKFLOW_ALL_ITEMS_ITEM_SUBJECT");
 
 	}
 
