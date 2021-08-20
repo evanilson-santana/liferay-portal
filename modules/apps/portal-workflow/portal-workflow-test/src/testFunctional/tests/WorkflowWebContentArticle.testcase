@@ -95,8 +95,6 @@ definition {
 		AssertElementNotPresent(
 			key_workflowItemSubject = "Web Content Article: Web Content Title",
 			locator1 = "WorkflowMetrics#METRICS_WORKFLOW_ALL_ITEMS_ITEM_SUBJECT");
-
-			
 	}
 
 }
