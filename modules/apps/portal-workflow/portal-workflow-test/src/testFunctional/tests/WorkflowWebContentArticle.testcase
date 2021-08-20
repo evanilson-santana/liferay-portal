@@ -93,8 +93,6 @@ definition {
 		Workflow.viewRejectedTask(
 			workflowAssetTitle = "Web Content Title",
 			workflowAssetType = "Web Content Article");
-
-			
 	}
 
 	@description = "Verify that a Web Content draft is not submitted as a Workflow task"
