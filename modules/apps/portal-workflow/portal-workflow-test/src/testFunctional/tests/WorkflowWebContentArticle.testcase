@@ -29,12 +29,85 @@ definition {
 	}
 
 	@description = "Verify that the user can modify the Web Content's workflow"
-	@ignore = "Test Stub"
 	@priority = "3"
 	test CanChangeWorkflowWebContent {
+		ApplicationsMenu.gotoPortlet(
+			category = "Workflow",
+			panel = "Applications",
+			portlet = "Process Builder");
 
-		// TODO LRQA-69393 CanChangeWorkflowWebContent pending implementation
+		Navigator.gotoNavItem(navItem = "Configuration");
 
+		Workflow.configureWorkflow(
+			workflowDefinition = "Single Approver",
+			workflowResourceValue = "Web Content Article");
+
+		Navigator.openURL();
+
+		ProductMenu.gotoPortlet(
+			category = "Content &amp; Data",
+			panel = "Site Administration",
+			portlet = "Web Content");
+
+		WebContentNavigator.gotoAddCP();
+
+		WebContent.addDraft(
+			webContentContent = "Web Content Content",
+			webContentTitle = "Basic Article 1");
+
+		Pause(locator1 = "1000");
+
+		PortletEntry.submitForPublication();
+
+		WorkflowMetrics.goToDashboardAllItemsWithFilter(
+			workflowFilterOption = "PENDING",
+			workflowMetricsTab = "DASHBOARD",
+			workflowProcess = "Single Approver");
+
+		AssertElementPresent(
+			key_workflowItemSubject = "Web Content Article: Basic Article 1",
+			locator1 = "WorkflowMetrics#METRICS_WORKFLOW_ALL_ITEMS_ITEM_SUBJECT");
+
+		Workflow.duplicateSingleApproverWorkflow(workflowName = "Single Approver 2");
+
+		ApplicationsMenu.gotoPortlet(
+			category = "Workflow",
+			panel = "Applications",
+			portlet = "Process Builder");
+
+		Navigator.gotoNavItem(navItem = "Configuration");
+
+		Workflow.configureWorkflow(
+			workflowDefinition = "Single Approver 2",
+			workflowResourceValue = "Web Content Article");
+
+		Navigator.openURL();
+
+		ProductMenu.gotoPortlet(
+			category = "Content &amp; Data",
+			panel = "Site Administration",
+			portlet = "Web Content");
+
+		WebContentNavigator.gotoAddCP();
+
+		WebContent.addDraft(
+			webContentContent = "Web Content Content",
+			webContentTitle = "Basic Article 2");
+
+		Pause(locator1 = "1000");
+
+		PortletEntry.submitForPublication();
+
+		WorkflowMetrics.goToDashboardAllItemsWithFilter(
+			workflowFilterOption = "PENDING",
+			workflowMetricsTab = "DASHBOARD",
+			workflowProcess = "Single Approver 2");
+
+		AssertElementPresent(
+			key_workflowItemSubject = "Web Content Article: Basic Article 2",
+			locator1 = "WorkflowMetrics#METRICS_WORKFLOW_ALL_ITEMS_ITEM_SUBJECT");
+
+			
 	}
 
 	@description = "Verify that a workflow can be assigned to Web Content in the DXP Configuration > Workflow"
