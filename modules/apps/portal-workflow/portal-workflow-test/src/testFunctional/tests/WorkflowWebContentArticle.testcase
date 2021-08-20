@@ -38,12 +38,42 @@ definition {
 	}
 
 	@description = "Verify that a workflow can be assigned to Web Content in the DXP Configuration > Workflow"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test CanConfigureWorkflowWebContent {
+		ProductMenu.gotoPortlet(
+			category = "Configuration",
+			panel = "Site Administration",
+			portlet = "Workflow");
 
-		// TODO LRQA-69394 CanConfigureWorkflowWebContent pending implementation
+		Workflow.configureWorkflow(
+			workflowDefinition = "Single Approver",
+			workflowResourceValue = "Web Content Article");
 
+		ProductMenu.gotoPortlet(
+			category = "Content &amp; Data",
+			panel = "Site Administration",
+			portlet = "Web Content");
+
+		WebContentNavigator.gotoAddCP();
+
+		WebContent.addDraft(
+			webContentContent = "Web Content Content",
+			webContentTitle = "Basic Article 1");
+
+		Pause(locator1 = "1000");
+
+		PortletEntry.submitForPublication();
+
+		WorkflowMetrics.goToDashboardAllItemsWithFilter(
+			workflowFilterOption = "PENDING",
+			workflowMetricsTab = "DASHBOARD",
+			workflowProcess = "Single Approver");
+
+		AssertElementPresent(
+			key_workflowItemSubject = "Web Content Article: Basic Article 1",
+			locator1 = "WorkflowMetrics#METRICS_WORKFLOW_ALL_ITEMS_ITEM_SUBJECT");
+
+			
 	}
 
 	@description = "Verify that the user can reject a Web Content Article"
