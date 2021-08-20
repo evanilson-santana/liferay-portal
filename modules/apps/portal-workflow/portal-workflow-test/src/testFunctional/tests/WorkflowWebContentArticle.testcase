@@ -106,8 +106,6 @@ definition {
 		AssertElementPresent(
 			key_workflowItemSubject = "Web Content Article: Basic Article 2",
 			locator1 = "WorkflowMetrics#METRICS_WORKFLOW_ALL_ITEMS_ITEM_SUBJECT");
-
-			
 	}
 
 	@description = "Verify that a workflow can be assigned to Web Content in the DXP Configuration > Workflow"
