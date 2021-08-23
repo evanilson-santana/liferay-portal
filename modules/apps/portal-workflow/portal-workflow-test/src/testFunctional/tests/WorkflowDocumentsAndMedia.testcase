@@ -576,7 +576,6 @@ definition {
 	@description = "This is a test for LRQA-69301. Verify the status is changed to pending after a checkout is cancelled"
 	@priority = "3"
 	test StatusPendingAfterCheckoutCancel {
-
 		ProductMenu.gotoPortlet(
 			category = "Content &amp; Data",
 			panel = "Site Administration",
@@ -603,8 +602,8 @@ definition {
 		Navigator.gotoBack();
 
 		DMDocument.viewStatus(
-			dmDocumentTitle = "DM Document Title",
-			dmDocumentStatus = "Draft");
+			dmDocumentStatus = "Draft",
+			dmDocumentTitle = "DM Document Title");
 
 		Navigator.gotoBack();
 
@@ -615,10 +614,8 @@ definition {
 		MenuItem.click(menuItem = "Cancel Checkout");
 
 		DMDocument.viewStatus(
-			dmDocumentTitle = "DM Document Title",
-			dmDocumentStatus = "Pending");
-
-
+			dmDocumentStatus = "Pending",
+			dmDocumentTitle = "DM Document Title");
 	}
 
 	@description = "This is a test for LRQA-69302. Verify created file shows message about publication in process"
