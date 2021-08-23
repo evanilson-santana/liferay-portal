@@ -574,11 +574,50 @@ definition {
 	}
 
 	@description = "This is a test for LRQA-69301. Verify the status is changed to pending after a checkout is cancelled"
-	@ignore = "true"
 	@priority = "3"
 	test StatusPendingAfterCheckoutCancel {
 
-		// TODO LRQA-69301 StatusPendingAfterCheckoutCancel pending implementation
+		ProductMenu.gotoPortlet(
+			category = "Content &amp; Data",
+			panel = "Site Administration",
+			portlet = "Documents and Media");
+
+		Workflow.configureWorkflowViaPortlet(workflowDefinition = "Single Approver");
+
+		ProductMenu.gotoPortlet(
+			category = "Content &amp; Data",
+			panel = "Site Administration",
+			portlet = "Documents and Media");
+
+		DMDocument.addWithWorkflowCP(
+			dmDocumentFile = "workflow.png",
+			dmDocumentTitle = "DM Document Title");
+
+		ProductMenu.gotoPortlet(
+			category = "Content &amp; Data",
+			panel = "Site Administration",
+			portlet = "Documents and Media");
+
+		DMDocument.checkoutCP(dmDocumentTitle = "DM Document Title");
+
+		Navigator.gotoBack();
+
+		DMDocument.viewStatus(
+			dmDocumentTitle = "DM Document Title",
+			dmDocumentStatus = "Draft");
+
+		Navigator.gotoBack();
+
+		Click(
+			key_dmDocumentTitle = "DM Document Title",
+			locator1 = "DocumentsAndMedia#DESCRIPTIVE_LIST_DOCUMENT_VERTICAL_ELLIPSIS_SPECIFIC");
+
+		MenuItem.click(menuItem = "Cancel Checkout");
+
+		DMDocument.viewStatus(
+			dmDocumentTitle = "DM Document Title",
+			dmDocumentStatus = "Pending");
+
 
 	}
 
