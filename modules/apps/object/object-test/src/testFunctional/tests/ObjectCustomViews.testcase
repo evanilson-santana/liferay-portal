@@ -536,9 +536,6 @@ definition {
 		ObjectCustomViews.goToDefaultSortTab();
 
 		ObjectCustomViews.assertNoColumnPresentInDefaultSort();
-		
-
-		
 	}
 
 	@description = "LPS-135394 - Verify the Name is required when creating a View"

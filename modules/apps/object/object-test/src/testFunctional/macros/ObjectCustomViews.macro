@@ -106,8 +106,6 @@ definition {
 		Click(locator1 = "ObjectCustomViews#SELECT_COLUMN_ON_DEFAULT_SORT");
 
 		AssertElementPresent(locator1 = "ObjectCustomViews#DEFAULT_SORT_NO_COLUMN_OPTION");
-
-		
 	}
 
 	macro assertObjectView {
