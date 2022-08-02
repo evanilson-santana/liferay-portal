@@ -444,7 +444,7 @@ definition {
 	@description = "LPS-135400 - Verify it is possible to add a relation with an entry through the Relationship field"
 	@priority = "5"
 	test CanAddRelationOnRelationshipField {
-		property portal.acceptance = "true";
+		property portal.acceptance = "evanilson";
 
 		ObjectAdmin.addObjectViaAPI(
 			labelName = "Custom Object 141652",
