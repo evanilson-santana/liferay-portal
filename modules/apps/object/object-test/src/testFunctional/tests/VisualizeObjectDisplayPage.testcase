@@ -88,12 +88,15 @@ definition {
 			label = "Expand Collection Display");
 
 		PageEditor.editCollectionDisplay(
-			fieldLabel = "Field",
-			filterCollection = "true",
 			fragmentName = "Collection Display",
-			option = "True",
 			selectedName = "Custom Objects 314",
 			styleDisplay = "Table");
+
+		PageEditor.gotoConfiguration(fragmentName = "Collection Display");	
+
+		PageEditor.gotoEllipsisMenuItemInItemSelector(
+			fieldLabel = "Collection",
+			menuItem = "Prefilter Collection");
 
 		PageEditor.publish();
 
@@ -162,6 +165,8 @@ definition {
 			fragmentName = "Collection Display",
 			selectedName = "Custom Objects 315",
 			styleDisplay = "Table");
+
+		PageEditor.gotoConfiguration(fragmentName = "Collection Display");	
 
 		PageEditor.gotoEllipsisMenuItemInItemSelector(
 			fieldLabel = "Collection",
@@ -749,7 +754,7 @@ definition {
 	@description = "LPS-137106 - Verify if it is possible to link a Mapped URL with the Objects Page Template"
 	@priority = "5"
 	test ObjectMappedURL {
-		property portal.acceptance = "quarantine";
+		property portal.acceptance = "true";
 
 		ObjectAdmin.addObjectViaAPI(
 			labelName = "Custom Object 327",
@@ -815,7 +820,10 @@ definition {
 			locator1 = "Select#GENERIC_SELECT_FIELD",
 			value1 = "Mapped URL");
 
-		VisualizeObjectCollectionDisplay.mapFragment(fieldLabel = "Display Page URL");
+		Select(
+			key_fieldLabel = "Field",
+			locator1 = "Select#GENERIC_SELECT_FIELD",
+			value1 = "Display Page URL");
 
 		PageEditor.publish();
 
@@ -830,6 +838,8 @@ definition {
 		AssertElementPresent(
 			key_entry = "Entry 1",
 			locator1 = "VisualizeObjectDisplayPage#DISPLAY_ENTRY");
+
+
 	}
 
 	@description = "LPS-133867|LPS-135004 - Verify if it's possible map and view the image of user Profile in a Fragment of Display Page"

@@ -11,43 +11,43 @@ definition {
 		User.firstLoginPG();
 	}
 
-	tearDown {
-		var testPortalInstance = PropsUtil.get("test.portal.instance");
+	// tearDown {
+	// 	var testPortalInstance = PropsUtil.get("test.portal.instance");
 
-		if ("${testPortalInstance}" == "true") {
-			PortalInstances.tearDownCP();
-		}
-		else {
-			ObjectAdmin.deleteAllCustomObjectsViaAPI();
-		}
-	}
+	// 	if ("${testPortalInstance}" == "true") {
+	// 		PortalInstances.tearDownCP();
+	// 	}
+	// 	else {
+	// 		ObjectAdmin.deleteAllCustomObjectsViaAPI();
+	// 	}
+	// }
 
 	@description = "LPS-135388 - Verify it is possible to search for an object's entry with the search experience in collection providers"
 	@priority = "4"
 	test CanSearchForObjectEntryOnSearchExperience {
 		property portal.upstream = "quarantine";
 
-		ObjectAdmin.addObjectViaAPI(
-			labelName = "Custom Object 145750",
-			objectName = "CustomObject145750",
-			pluralLabelName = "Custom Objects 145750");
+		// ObjectAdmin.addObjectViaAPI(
+		// 	labelName = "Custom Object 145750",
+		// 	objectName = "CustomObject145750",
+		// 	pluralLabelName = "Custom Objects 145750");
 
-		ObjectAdmin.addObjectFieldViaAPI(
-			fieldBusinessType = "Text",
-			fieldLabelName = "Custom Field",
-			fieldName = "customObjectField",
-			fieldType = "String",
-			isRequired = "false",
-			objectName = "CustomObject145750");
+		// ObjectAdmin.addObjectFieldViaAPI(
+		// 	fieldBusinessType = "Text",
+		// 	fieldLabelName = "Custom Field",
+		// 	fieldName = "customObjectField",
+		// 	fieldType = "String",
+		// 	isRequired = "false",
+		// 	objectName = "CustomObject145750");
 
-		ObjectAdmin.publishObjectViaAPI(objectName = "CustomObject145750");
+		// ObjectAdmin.publishObjectViaAPI(objectName = "CustomObject145750");
 
-		for (var fieldEntry : list "A,B") {
-			ObjectAdmin.addObjectSingleFieldEntryViaAPI(
-				fieldName = "customObjectField",
-				objectName = "CustomObject145750",
-				value = "${fieldEntry}");
-		}
+		// for (var fieldEntry : list "A,B") {
+		// 	ObjectAdmin.addObjectSingleFieldEntryViaAPI(
+		// 		fieldName = "customObjectField",
+		// 		objectName = "CustomObject145750",
+		// 		value = "${fieldEntry}");
+		// }
 
 		Navigator.openURL();
 
