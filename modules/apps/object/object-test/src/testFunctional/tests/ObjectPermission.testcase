@@ -410,6 +410,7 @@ definition {
 	@priority = "5"
 	test CanEditItsOwnEntryWithOnlyAddPermission {
 		property portal.acceptance = "true";
+		property portal.acceptance = "Test_Permission_Path";
 		property test.name.skip.portal.instance = "ObjectPermission#CanEditItsOwnEntryWithOnlyAddPermission";
 
 		ObjectAdmin.addObjectViaAPI(
@@ -600,6 +601,9 @@ definition {
 	test CannotDeleteOwnSingleObjectEntryWithoutDeleteOwnerPermission {
 		property osgi.module.configuration.file.names = "com.liferay.object.rest.internal.configuration.FFObjectEntryPermissionsActionConfiguration.config";
 		property osgi.module.configurations = "enabled=\"true\"";
+		property osgi.module.configurations = "enabled=\"true\"";
+		property portal.acceptance = "Test_Permission_Path";
+		property portal.upstream = "quarantine";
 		property portal.upstream = "quarantine";
 		property test.name.skip.portal.instance = "ObjectPermission#CannotDeleteOwnSingleObjectEntryWithoutDeleteOwnerPermission";
 
@@ -862,6 +866,9 @@ definition {
 	test CannotUpdateOwnSingleObjectEntryWithoutPermissionsOwnerPermission {
 		property osgi.module.configuration.file.names = "com.liferay.object.rest.internal.configuration.FFObjectEntryPermissionsActionConfiguration.config";
 		property osgi.module.configurations = "enabled=\"true\"";
+		property osgi.module.configurations = "enabled=\"true\"";
+		property portal.acceptance = "Test_Permission_Path";
+		property portal.upstream = "quarantine";
 		property portal.upstream = "quarantine";
 		property test.name.skip.portal.instance = "ObjectPermission#CannotUpdateOwnSingleObjectEntryWithoutPermissionsOwnerPermission";
 
@@ -1295,6 +1302,7 @@ definition {
 	@description = "LPS-146757 - Verify it is not possible to view a single Object Entry create by the user if the View Owner permission is removed"
 	@priority = "4"
 	test CannotViewOwnSingleObjectEntryWithoutViewOwnerPermission {
+		property portal.acceptance = "Test_Permission_Path";
 		property portal.upstream = "quarantine";
 		property test.name.skip.portal.instance = "ObjectPermission#CannotViewOwnSingleObjectEntryWithoutViewOwnerPermission";
 
@@ -1595,6 +1603,7 @@ definition {
 		property osgi.module.configuration.file.names = "com.liferay.object.rest.internal.configuration.FFObjectEntryPermissionsActionConfiguration.config";
 		property osgi.module.configurations = "enabled=\"true\"";
 		property portal.acceptance = "true";
+		property portal.acceptance = "Test_Permission_Path";
 		property portal.upstream = "quarantine";
 		property test.name.skip.portal.instance = "ObjectPermission#CanUpdateSingleObjectEntryPermissionsPermission";
 
@@ -1683,6 +1692,7 @@ definition {
 		property osgi.module.configuration.file.names = "com.liferay.object.rest.internal.configuration.FFObjectEntryPermissionsActionConfiguration.config";
 		property osgi.module.configurations = "enabled=\"true\"";
 		property portal.acceptance = "true";
+		property portal.acceptance = "Test_Permission_Path";
 		property portal.upstream = "quarantine";
 		property test.name.skip.portal.instance = "ObjectPermission#CanUpdateSingleObjectEntryWithUpdatePermission";
 
@@ -2004,6 +2014,7 @@ definition {
 	@priority = "5"
 	test CanViewItsOwnEntryWithOnlyAddPermission {
 		property portal.acceptance = "true";
+		property portal.acceptance = "Test_Permission_Path";
 		property test.name.skip.portal.instance = "ObjectPermission#CanViewItsOwnEntryWithOnlyAddPermission";
 
 		ObjectAdmin.addObjectViaAPI(
@@ -2117,6 +2128,7 @@ definition {
 		property osgi.module.configuration.file.names = "com.liferay.object.rest.internal.configuration.FFObjectEntryPermissionsActionConfiguration.config";
 		property osgi.module.configurations = "enabled=\"true\"";
 		property portal.acceptance = "true";
+		property portal.acceptance = "Test_Permission_Path";
 		property portal.upstream = "quarantine";
 		property test.name.skip.portal.instance = "ObjectPermission#CanViewSingleObjectEntryWithViewPermission";
 
@@ -2296,6 +2308,7 @@ definition {
 	@priority = "5"
 	test GuestCanAddObjectEntriesWithAddPermission {
 		property portal.acceptance = "true";
+		property portal.acceptance = "Test_Permission_Path";
 		property test.name.skip.portal.instance = "ObjectPermission#GuestCanAddObjectEntriesWithAddPermission";
 
 		ObjectAdmin.addObjectViaAPI(
@@ -2522,6 +2535,7 @@ definition {
 	@priority = "5"
 	test GuestCanViewObjectEntriesWithViewPermission {
 		property portal.acceptance = "true";
+		property portal.acceptance = "Test_Permission_Path";
 		property test.name.skip.portal.instance = "ObjectPermission#GuestCanViewObjectEntriesWithViewPermission";
 
 		ObjectAdmin.addObjectViaAPI(

@@ -378,6 +378,8 @@ definition {
 	@description = "LPS-135390 - Verify it is possible to add an Object with the Add Object Definition permission"
 	@priority = "4"
 	test CanAddObjectWithAddPermission {
+		property portal.acceptance = "Test_Permission_Path";
+
 		JSONRole.addRegularRole(
 			roleKey = "Regular Role",
 			roleTitle = "Regular Role");
@@ -1298,6 +1300,8 @@ definition {
 	@description = "LPS-135390 - Verify it is possible to delete an Object with the Delete permission"
 	@priority = "4"
 	test CanDeleteObjectWithDeletePermission {
+		property portal.acceptance = "Test_Permission_Path";
+
 		ObjectAdmin.addObjectViaAPI(
 			labelName = "Custom Object 35",
 			objectName = "CustomObject35",
@@ -1555,6 +1559,7 @@ definition {
 	@description = "LPS-135390 - Verify it is not possible to add an Object without the Add Object Definition permission"
 	@priority = "5"
 	test CannotAddObjectWithoutAddPermission {
+		property portal.acceptance = "Test_Permission_Path";
 		property portal.acceptance = "true";
 
 		JSONRole.addRegularRole(
@@ -1985,6 +1990,8 @@ definition {
 	@description = "LPS-135390 - Verify it is not possible to publish an Object without the Publish Object Definition permission"
 	@priority = "4"
 	test CannotPublishObjectWithouPublishPermission {
+		property portal.acceptance = "Test_Permission_Path";
+
 		ObjectAdmin.addObjectViaAPI(
 			labelName = "Custom Object 53",
 			objectName = "CustomObject53",
@@ -2598,6 +2605,7 @@ definition {
 	@priority = "5"
 	test CanOnlySeeEntriesFromAccount {
 		property portal.acceptance = "true";
+		property portal.acceptance = "Test_Permission_Path";
 
 		task ("Add Accounts and Users related itself (via API)") {
 			JSONAccountEntry.addAccountEntry(

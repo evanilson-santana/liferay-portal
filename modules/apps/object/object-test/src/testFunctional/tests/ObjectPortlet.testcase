@@ -82,6 +82,7 @@ definition {
 	@description = "LPS-135390 - Verify it is possible to view and access the Custom Object portlet with the Access in Control Panel permission"
 	@priority = "4"
 	test CanAccessCustomObjectWithAccessPermission {
+		property portal.acceptance = "Test_Permission_Path";
 		property portal.upstream = "quarantine";
 		property test.name.skip.portal.instance = "ObjectPortlet#CanAccessCustomObjectWithAccessPermission";
 
@@ -407,6 +408,7 @@ definition {
 	@description = "LPS-135390 - Verify it is possible to add an Object entry with the Add Object Entry permission"
 	@priority = "4"
 	test CanAddObjectEntryWithAddPermission {
+		property portal.acceptance = "Test_Permission_Path";
 		property portal.upstream = "quarantine";
 		property test.name.skip.portal.instance = "ObjectPortlet#CanAddObjectEntryWithAddPermission";
 
@@ -820,6 +822,7 @@ definition {
 	@description = "LPS-135390 - Verify it is possible to delete an Object entry with the Delete permission"
 	@priority = "4"
 	test CanDeleteObjectEntryWithDeletePermission {
+		property portal.acceptance = "Test_Permission_Path";
 		property portal.upstream = "quarantine";
 		property test.name.skip.portal.instance = "ObjectPortlet#CanDeleteObjectEntryWithDeletePermission";
 
@@ -1219,6 +1222,7 @@ definition {
 	@priority = "5"
 	test CannotAddObjectEntryWithoutAddPermission {
 		property portal.acceptance = "true";
+		property portal.acceptance = "Test_Permission_Path";
 		property portal.upstream = "quarantine";
 		property test.name.skip.portal.instance = "ObjectPortlet#CannotAddObjectEntryWithoutAddPermission";
 
@@ -1283,6 +1287,7 @@ definition {
 	@description = "LPS-135390 - Verify it is not possible to delete an Object entry without the Delete permission"
 	@priority = "4"
 	test CannotDeleteObjectEntryWithoutDeletePermission {
+		property portal.acceptance = "Test_Permission_Path";
 		property test.name.skip.portal.instance = "ObjectPortlet#CannotDeleteObjectEntryWithoutDeletePermission";
 
 		ObjectAdmin.addObjectViaAPI(
@@ -1364,6 +1369,7 @@ definition {
 	@description = "LPS-135390 - Verify it is not possible to update an Object entry without the Update permission"
 	@priority = "4"
 	test CannotUpdateObjectEntryWithoutUpdatePermission {
+		property portal.acceptance = "Test_Permission_Path";
 		property portal.upstream = "quarantine";
 		property test.name.skip.portal.instance = "ObjectPortlet#CannotUpdateObjectEntryWithoutUpdatePermission";
 
@@ -1449,6 +1455,7 @@ definition {
 	@priority = "5"
 	test CannotViewOtherUsersEntryWithOnlyAddPermission {
 		property portal.acceptance = "true";
+		property portal.acceptance = "Test_Permission_Path";
 		property test.name.skip.portal.instance = "ObjectPortlet#CannotViewOtherUsersEntryWithOnlyAddPermission";
 
 		ObjectAdmin.addObjectViaAPI(
@@ -1530,6 +1537,7 @@ definition {
 	@description = "LPS-135390 - Verify it is not possible to view other user's Object entry without the View permission"
 	@priority = "4"
 	test CannotViewOtherUsersEntryWithoutViewPermission {
+		property portal.acceptance = "Test_Permission_Path";
 		property portal.upstream = "quarantine";
 		property test.name.skip.portal.instance = "ObjectPortlet#CannotViewOtherUsersEntryWithoutViewPermission";
 
@@ -1760,6 +1768,7 @@ definition {
 	@description = "LPS-135390 - Verify it is possible to update an Object entry with the Update permission"
 	@priority = "4"
 	test CanUpdateObjectEntryWithUpdatePermission {
+		property portal.acceptance = "Test_Permission_Path";
 		property portal.upstream = "quarantine";
 		property test.name.skip.portal.instance = "ObjectPortlet#CanUpdateObjectEntryWithUpdatePermission";
 
@@ -2055,6 +2064,7 @@ definition {
 	@description = "LPS-135390 - Verify it is possible to view other user's Object entry with the View permission"
 	@priority = "4"
 	test CanViewOtherUsersEntryWithViewPermission {
+		property portal.acceptance = "Test_Permission_Path";
 		property portal.upstream = "quarantine";
 		property test.name.skip.portal.instance = "ObjectPortlet#CanViewOtherUsersEntryWithViewPermission";
 
