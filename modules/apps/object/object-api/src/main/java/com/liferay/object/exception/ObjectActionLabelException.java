@@ -12,22 +12,28 @@
  * details.
  */
 
-package com.liferay.object.action.engine;
+package com.liferay.object.exception;
 
-import com.liferay.portal.kernel.json.JSONObject;
+import com.liferay.portal.kernel.exception.PortalException;
 
 /**
  * @author Marco Leo
- * @author Brian Wing Shun Chan
  */
-public interface ObjectActionEngine {
+public class ObjectActionLabelException extends PortalException {
 
-	public void executeObjectAction(
-		String objectActionName, String objectActionTriggerKey,
-		long objectDefinitionId, JSONObject payloadJSONObject, long userId);
+	public ObjectActionLabelException() {
+	}
 
-	public void executeObjectActions(
-		String className, long companyId, String objectActionTriggerKey,
-		JSONObject payloadJSONObject, long userId);
+	public ObjectActionLabelException(String msg) {
+		super(msg);
+	}
+
+	public ObjectActionLabelException(String msg, Throwable throwable) {
+		super(msg, throwable);
+	}
+
+	public ObjectActionLabelException(Throwable throwable) {
+		super(throwable);
+	}
 
 }
