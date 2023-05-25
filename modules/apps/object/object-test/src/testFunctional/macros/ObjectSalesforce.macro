@@ -1,5 +1,29 @@
 definition {
 
+	macro addObjectWithSalesforce {
+		SelectFrame(locator1 = "ObjectCustomViews#VIEW_MODAL_CONTENT");
+
+		Click(locator1 = "ObjectAdmin#ADD_CUSTOM_OBJECT");
+
+		Type(
+			locator1 = "ObjectAdmin#LABEL_CUSTOM_OBJECT",
+			value1 = ${fieldLabelName});
+
+		Type(
+			locator1 = "ObjectAdmin#PLURAL_LABEL_CUSTOM_OBJECT",
+			value1 = ${pluralLabelName});
+
+		if (isSet(fieldName)) {
+			Type(
+				locator1 = "ObjectAdmin#NAME_CUSTOM_OBJECT",
+				value1 = ${fieldName});
+		}
+
+		Click.clickNoMouseOver(
+			key_storageOption = "Salesforce",
+			locator1 = "CreateObject#STORAGE_TYPE_OPTION");
+	}
+
 	macro configureSalesforce {
 		var salesforceLoginURL = PropsUtil.get("object.storage.salesforce.login.url");
 		var salesforceConsumerKey = PropsUtil.get("object.storage.salesforce.consumer.key");
@@ -35,25 +59,5 @@ definition {
 
 		Alert.viewSuccessMessage();
 	}
-
-    macro addObjectWithSalesforce {
-        SelectFrame(locator1 = "ObjectCustomViews#VIEW_MODAL_CONTENT");
-        
-        Click(locator1 = "ObjectAdmin#ADD_CUSTOM_OBJECT");
-        Type(
-            locator1 = "ObjectAdmin#LABEL_CUSTOM_OBJECT",
-            value1 = ${fieldLabelName});
-        Type(
-            locator1 = "ObjectAdmin#PLURAL_LABEL_CUSTOM_OBJECT",
-            value1 = ${pluralLabelName});
-        if (isSet(fieldName)) {
-            Type(
-                locator1 = "ObjectAdmin#NAME_CUSTOM_OBJECT",
-                value1 = ${fieldName});
-        }
-        Click.clickNoMouseOver(
-            locator1 = "CreateObject#STORAGE_TYPE_OPTION",
-            key_storageOption = "Salesforce");
-    }
 
 }
