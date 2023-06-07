@@ -33,6 +33,8 @@ definition {
 				objectName = "CustomObject186234",
 				pluralLabelName = "Custom Objects 186234");
 
+				
+
 			ObjectAdmin.openObjectAdmin();
 
 			ObjectPortlet.selectCustomObject(label = "Custom Object 186234");
