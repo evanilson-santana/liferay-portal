@@ -4094,6 +4094,28 @@ tell application "Safari" to quit
 		</sequential>
 	</macrodef>
 
+	<macrodef name="prepare-selenium-object-encryption-properties">
+		<sequential>
+			<if>
+				<isset property="object.encryption.algorithm" />
+				<then>
+					<echo append="true" file="${test.ext.properties.file}">
+						object.encryption.algorithm=${object.encryption.algorithm}
+					</echo>
+				</then>
+			</if>
+
+			<if>
+				<isset property="object.encryption.key" />
+				<then>
+					<echo append="true" file="${test.ext.properties.file}">
+						object.encryption.key=${object.encryption.key}
+					</echo>
+				</then>
+			</if>
+		</sequential>
+	</macrodef>
+
 	<macrodef name="prepare-selenium-object-storage-salesforce-properties">
 		<sequential>
 			<if>
@@ -12537,10 +12559,26 @@ auto.deploy.dest.dir=C:/WINDOWS/system32/config/systemprofile/liferay/websphere-
 		</if>
 
 		<if>
+<<<<<<< HEAD
 			<isset property="gcs.bucket.id" />
 			<then>
 				<echo append="true" file="${test.ext.properties.file}">
 					gcs.bucket.id=${gcs.bucket.id}
+=======
+			<isset property="object.encryption.algorithm" />
+			<then>
+				<echo append="true" file="${test.ext.properties.file}">
+					object.encryption.algorithm=${object.encryption.algorithm}
+				</echo>
+			</then>
+		</if>
+
+		<if>
+			<isset property="object.encryption.key" />
+			<then>
+				<echo append="true" file="${test.ext.properties.file}">
+					object.encryption.key=${object.encryption.key}
+>>>>>>> 45ff7cc (LPS-186270 Get encryption key and algorithm for Object tests)
 				</echo>
 			</then>
 		</if>
@@ -12933,6 +12971,7 @@ auto.deploy.dest.dir=C:/WINDOWS/system32/config/systemprofile/liferay/websphere-
 		<prepare-selenium-google-cloud-autotagging-properties />
 		<prepare-selenium-google-cloud-translation-properties />
 		<prepare-selenium-google-properties />
+		<prepare-selenium-object-encryption-properties />
 		<prepare-selenium-object-storage-salesforce-properties />
 		<prepare-selenium-onedrive-properties />
 		<prepare-selenium-openid-properties />
