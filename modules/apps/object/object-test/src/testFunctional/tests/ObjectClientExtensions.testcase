@@ -1,0 +1,51 @@
+@component-name = "portal-object"
+definition {
+
+	property portal.release = "true";
+	property portal.upstream = "true";
+	property test.liferay.virtual.instance = "false";
+	property testray.main.component.name = "Object";
+	property workspaces.client.extension.names = "liferay-sample-batch,liferay-sample-etc-spring-boot";
+
+	setUp {
+		TestCase.setUpPortalInstance();
+
+		User.firstLoginPG();
+
+		AntCommands.runCommand("build-test-liferay-sample-workspace.xml", "start-liferay-sample-etc-spring-boot");
+	}
+
+	tearDown {
+		var testLiferayVirtualInstance = PropsUtil.get("test.liferay.virtual.instance");
+
+		if (${testLiferayVirtualInstance} == "true") {
+			PortalInstances.tearDownCP();
+		}
+	}
+
+	@description = "test client extension in object"
+	@priority = 5
+	test TestObjectEntryManagerSample {
+		property custom.properties = "feature.flag.LPS-135430=true";
+
+		task ("Given a custom object stored in the proxy sample and published") {
+			ObjectAdmin.openObjectAdmin();
+
+			ObjectAdmin.addObjectWithStorageType(
+				fieldLabelName = "Custom Object 12345",
+				pluralLabelName = "Custom Objects 12345",
+				storageType = "Liferay Sample Etc Spring Boot Spring Boot Object Entry Manager 1");
+
+			ObjectAdmin.addObjectFieldViaAPI(
+				fieldBusinessType = "Text",
+				fieldLabelName = "Custom Field",
+				fieldName = "customObjectField",
+				fieldType = "String",
+				isRequired = "false",
+				objectName = "CustomObject12345");
+
+			ObjectAdmin.publishObjectViaAPI(objectName = "CustomObject12345");
+		}
+	}
+
+}
