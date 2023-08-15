@@ -12559,12 +12559,6 @@ auto.deploy.dest.dir=C:/WINDOWS/system32/config/systemprofile/liferay/websphere-
 		</if>
 
 		<if>
-<<<<<<< HEAD
-			<isset property="gcs.bucket.id" />
-			<then>
-				<echo append="true" file="${test.ext.properties.file}">
-					gcs.bucket.id=${gcs.bucket.id}
-=======
 			<isset property="object.encryption.algorithm" />
 			<then>
 				<echo append="true" file="${test.ext.properties.file}">
@@ -12578,7 +12572,6 @@ auto.deploy.dest.dir=C:/WINDOWS/system32/config/systemprofile/liferay/websphere-
 			<then>
 				<echo append="true" file="${test.ext.properties.file}">
 					object.encryption.key=${object.encryption.key}
->>>>>>> 45ff7cc (LPS-186270 Get encryption key and algorithm for Object tests)
 				</echo>
 			</then>
 		</if>
