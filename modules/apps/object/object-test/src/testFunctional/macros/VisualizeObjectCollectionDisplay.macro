@@ -16,6 +16,23 @@ definition {
 	}
 
 	macro mapFragment {
+		PageEditor.addFragment(
+			collectionName = "Content Display",
+			fragmentName = "Collection Display");
+
+		PageEditor.editCollectionDisplay(
+			fragmentName = "Collection Display",
+			infoListProviderName = "${pluralLabelName}");
+
+		Refresh();
+
+		PageEditor.addFragmentToCollectionDisplay(
+			collectionName = "Basic Components",
+			entryTitle = "",
+			fragmentName = "Heading");
+
+		VisualizeObjectCollectionDisplay.openHeading();
+
 		Select(
 			locator1 = "VisualizeObjectCollectionDisplay#MAP_FRAGMENT",
 			value1 = ${fieldLabel});
