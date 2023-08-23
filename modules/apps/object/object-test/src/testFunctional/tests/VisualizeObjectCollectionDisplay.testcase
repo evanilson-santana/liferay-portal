@@ -117,19 +117,17 @@ definition {
 			contentType = "Custom Object 300",
 			pageTemplateName = "Blank Display Page");
 
-		PageEditor.addFragment(
-			collectionName = "Content Display",
-			fragmentName = "Collection Display");
-
-		VisualizeObjectCollectionDisplay.addFieldForCollectionDisplay(fragmentName = "Heading");
-
-		VisualizeObjectCollectionDisplay.openHeading();
-
-		VisualizeObjectCollectionDisplay.mapFragment(fieldLabel = "Number");
+		VisualizeObjectCollectionDisplay.mapFragment(
+			pluralLabelName = "Custom Objects 300",
+			fieldLabel = "Number");
 
 		VisualizeObjectCollectionDisplay.viewMappedFragment(fieldLabel = "Number");
 
-		VisualizeObjectCollectionDisplay.mapFragment(fieldLabel = "Text");
+		VisualizeObjectCollectionDisplay.openHeading();
+
+		Select(
+			locator1 = "VisualizeObjectCollectionDisplay#MAP_FRAGMENT",
+			value1 = "Text");
 
 		VisualizeObjectCollectionDisplay.viewMappedFragment(fieldLabel = "Text");
 	}
@@ -195,23 +193,9 @@ definition {
 			contentType = "Custom Object 302",
 			pageTemplateName = "Blank Display Page");
 
-		PageEditor.addFragment(
-			collectionName = "Content Display",
-			fragmentName = "Collection Display");
-
-		PageEditor.editCollectionDisplay(
-			fragmentName = "Collection Display",
-			infoListProviderName = "Custom Objects 302");
-
-		PageEditor.gotoTab(tabName = "Fragments and Widgets");
-
-		VisualizeObjectCollectionDisplay.addFieldForCollectionDisplay(fragmentName = "Heading");
-
-		VisualizeObjectCollectionDisplay.openHeading();
-
-		VisualizeObjectCollectionDisplay.addFieldInsideCollectionDisplay();
-
-		VisualizeObjectCollectionDisplay.mapFragment(fieldLabel = "Text");
+		VisualizeObjectCollectionDisplay.mapFragment(
+			pluralLabelName = "Custom Objects 302",
+			fieldLabel = "Text");
 
 		PageEditor.publish();
 

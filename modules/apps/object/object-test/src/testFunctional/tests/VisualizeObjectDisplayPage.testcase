@@ -334,17 +334,9 @@ definition {
 
 		ContentPages.addPage(pageName = "Test Content Page Name");
 
-		PageEditor.addFragment(
-			collectionName = "Basic Components",
-			fragmentName = "Heading");
-
-		VisualizeObjectCollectionDisplay.openHeading();
-
-		VisualizeObjectDisplayPage.addItem(
-			frameTitle = "Select",
-			pluralLabelName = "Custom Objects 318");
-
-		VisualizeObjectCollectionDisplay.mapFragment(fieldLabel = "BigDecimal");
+		VisualizeObjectCollectionDisplay.mapFragment(
+			pluralLabelName = "Custom Objects 318",
+			fieldLabel = "BigDecimal");
 
 		AssertElementPresent(
 			key_entry = "123.123456",
@@ -386,17 +378,9 @@ definition {
 
 		ContentPages.addPage(pageName = "Test Content Page Name");
 
-		PageEditor.addFragment(
-			collectionName = "Basic Components",
-			fragmentName = "Heading");
-
-		VisualizeObjectCollectionDisplay.openHeading();
-
-		VisualizeObjectDisplayPage.addItem(
-			frameTitle = "Select",
-			pluralLabelName = "Custom Objects 319");
-
-		VisualizeObjectCollectionDisplay.mapFragment(fieldLabel = "Boolean");
+		VisualizeObjectCollectionDisplay.mapFragment(
+			pluralLabelName = "Custom Objects 319",
+			fieldLabel = "Boolean");
 
 		AssertElementPresent(
 			key_entry = "true",
@@ -438,17 +422,9 @@ definition {
 
 		ContentPages.addPage(pageName = "Test Content Page Name");
 
-		PageEditor.addFragment(
-			collectionName = "Basic Components",
-			fragmentName = "Heading");
-
-		VisualizeObjectCollectionDisplay.openHeading();
-
-		VisualizeObjectDisplayPage.addItem(
-			frameTitle = "Select",
-			pluralLabelName = "Custom Objects 320");
-
-		VisualizeObjectCollectionDisplay.mapFragment(fieldLabel = "Date");
+		VisualizeObjectCollectionDisplay.mapFragment(
+			pluralLabelName = "Custom Objects 320",
+			fieldLabel = "Date");
 
 		AssertElementPresent(
 			key_entry = "Jan 1, 2021",
@@ -490,17 +466,9 @@ definition {
 
 		ContentPages.addPage(pageName = "Test Content Page Name");
 
-		PageEditor.addFragment(
-			collectionName = "Basic Components",
-			fragmentName = "Heading");
-
-		VisualizeObjectCollectionDisplay.openHeading();
-
-		VisualizeObjectDisplayPage.addItem(
-			frameTitle = "Select",
-			pluralLabelName = "Custom Objects 321");
-
-		VisualizeObjectCollectionDisplay.mapFragment(fieldLabel = "Double");
+		VisualizeObjectCollectionDisplay.mapFragment(
+			pluralLabelName = "Custom Objects 321",
+			fieldLabel = "Double");
 
 		AssertElementPresent(
 			key_entry = "1.54",
@@ -542,17 +510,9 @@ definition {
 
 		ContentPages.addPage(pageName = "Test Content Page Name");
 
-		PageEditor.addFragment(
-			collectionName = "Basic Components",
-			fragmentName = "Heading");
-
-		VisualizeObjectCollectionDisplay.openHeading();
-
-		VisualizeObjectDisplayPage.addItem(
-			frameTitle = "Select",
-			pluralLabelName = "Custom Objects 322");
-
-		VisualizeObjectCollectionDisplay.mapFragment(fieldLabel = "Integer");
+		VisualizeObjectCollectionDisplay.mapFragment(
+			pluralLabelName = "Custom Objects 322",
+			fieldLabel = "Integer");
 
 		AssertElementPresent(
 			key_entry = 123456789,
@@ -594,17 +554,9 @@ definition {
 
 		ContentPages.addPage(pageName = "Test Content Page Name");
 
-		PageEditor.addFragment(
-			collectionName = "Basic Components",
-			fragmentName = "Heading");
-
-		VisualizeObjectCollectionDisplay.openHeading();
-
-		VisualizeObjectDisplayPage.addItem(
-			frameTitle = "Select",
-			pluralLabelName = "Custom Objects 323");
-
-		VisualizeObjectCollectionDisplay.mapFragment(fieldLabel = "Long");
+		VisualizeObjectCollectionDisplay.mapFragment(
+			pluralLabelName = "Custom Objects 323",
+			fieldLabel = "Long");
 
 		AssertElementPresent(
 			key_entry = 1234567891234567,
@@ -644,19 +596,9 @@ definition {
 			objectName = "CustomObject324",
 			value = "Test text");
 
-		ContentPages.addPage(pageName = "Test Content Page Name");
-
-		PageEditor.addFragment(
-			collectionName = "Basic Components",
-			fragmentName = "Heading");
-
-		VisualizeObjectCollectionDisplay.openHeading();
-
-		VisualizeObjectDisplayPage.addItem(
-			frameTitle = "Select",
-			pluralLabelName = "Custom Objects 324");
-
-		VisualizeObjectCollectionDisplay.mapFragment(fieldLabel = "String");
+		VisualizeObjectCollectionDisplay.mapFragment(
+			pluralLabelName = "Custom Objects 324",
+			fieldLabel = "String");
 
 		AssertElementPresent(
 			key_entry = "Test text",
@@ -754,13 +696,9 @@ definition {
 			displayPageName = "Blank Display Page",
 			subtype = "Custom Object 326");
 
-		PageEditor.addFragment(
-			collectionName = "Basic Components",
-			fragmentName = "Heading");
-
-		VisualizeObjectCollectionDisplay.openHeading();
-
-		VisualizeObjectCollectionDisplay.mapFragment(fieldLabel = "Field");
+		VisualizeObjectCollectionDisplay.mapFragment(
+			pluralLabelName = "Custom Objects 326",
+			fieldLabel = "Field");
 
 		PageEditor.selectItemToPreviewWithObject(entryValue = "Test Entry");
 
@@ -796,13 +734,9 @@ definition {
 			contentType = "Custom Object 327",
 			pageTemplateName = "Blank Display Page");
 
-		PageEditor.addFragment(
-			collectionName = "Basic Components",
-			fragmentName = "Heading");
-
-		VisualizeObjectCollectionDisplay.openHeading();
-
-		VisualizeObjectCollectionDisplay.mapFragment(fieldLabel = "Custom Field");
+		VisualizeObjectCollectionDisplay.mapFragment(
+			pluralLabelName = "Custom Objects 327",
+			fieldLabel = "Custom Field");
 
 		PageEditor.publish();
 
@@ -810,24 +744,9 @@ definition {
 
 		ContentPages.addPage(pageName = "Test Content Page Name");
 
-		PageEditor.addFragment(
-			collectionName = "Content Display",
-			fragmentName = "Collection Display");
-
-		PageEditor.editCollectionDisplay(
-			fragmentName = "Collection Display",
-			infoListProviderName = "Custom Objects 327");
-
-		Refresh();
-
-		PageEditor.addFragmentToCollectionDisplay(
-			collectionName = "Basic Components",
-			entryTitle = "",
-			fragmentName = "Heading");
-
-		VisualizeObjectCollectionDisplay.openHeading();
-
-		VisualizeObjectCollectionDisplay.mapFragment(fieldLabel = "Custom Field");
+		VisualizeObjectCollectionDisplay.mapFragment(
+			pluralLabelName = "Custom Objects 327",
+			fieldLabel = "Custom Field");
 
 		Navigator.gotoNavTab(navTab = "Link");
 

@@ -48,17 +48,9 @@ definition {
 
 		ContentPages.addPage(pageName = "Blank Page");
 
-		PageEditor.addFragment(
-			collectionName = "Basic Components",
-			fragmentName = "Heading");
-
-		VisualizeObjectCollectionDisplay.openHeading();
-
-		VisualizeObjectDisplayPage.addItem(
-			frameTitle = "Select",
-			pluralLabelName = "Custom Objects 203");
-
-		VisualizeObjectCollectionDisplay.mapFragment(fieldLabel = "Custom Field");
+		VisualizeObjectCollectionDisplay.mapFragment(
+			pluralLabelName = "Custom Objects 203",
+			fieldLabel = "Custom Field");
 
 		AssertElementPresent(
 			key_entry = "We make it possible for people to reach their full potential to serve others.",
@@ -113,17 +105,9 @@ definition {
 
 		ContentPages.addPage(pageName = "Blank Page");
 
-		PageEditor.addFragment(
-			collectionName = "Basic Components",
-			fragmentName = "Heading");
-
-		VisualizeObjectCollectionDisplay.openHeading();
-
-		VisualizeObjectDisplayPage.addItem(
-			frameTitle = "Select",
-			pluralLabelName = "Custom Objects 204");
-
-		VisualizeObjectCollectionDisplay.mapFragment(fieldLabel = "Field Picklist");
+		VisualizeObjectCollectionDisplay.mapFragment(
+			pluralLabelName = "Custom Objects 204",
+			fieldLabel = "Field Picklist");
 
 		AssertElementPresent(
 			key_entry = "Entry Test",

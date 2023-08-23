@@ -4960,13 +4960,9 @@ definition {
 			displayPageName = "Blank Display Page",
 			subtype = "Custom Object 116");
 
-		PageEditor.addFragment(
-			collectionName = "Basic Components",
-			fragmentName = "Heading");
-
-		VisualizeObjectCollectionDisplay.openHeading();
-
-		VisualizeObjectCollectionDisplay.mapFragment(fieldLabel = "Custom Field");
+		VisualizeObjectCollectionDisplay.mapFragment(
+			pluralLabelName = "Custom Objects 116",
+			fieldLabel = "Custom Field");
 
 		VisualizeObjectCollectionDisplay.viewMappedFragment(fieldLabel = "Custom Field");
 
@@ -5216,13 +5212,9 @@ definition {
 			displayPageName = "Blank Display Page",
 			subtype = "Custom Object 141623");
 
-		PageEditor.addFragment(
-			collectionName = "Basic Components",
-			fragmentName = "Heading");
-
-		VisualizeObjectCollectionDisplay.openHeading();
-
-		VisualizeObjectCollectionDisplay.mapFragment(fieldLabel = "Custom Field");
+		VisualizeObjectCollectionDisplay.mapFragment(
+			pluralLabelName = "Custom Objects 141623",
+			fieldLabel = "Custom Field");
 
 		VisualizeObjectCollectionDisplay.viewMappedFragment(fieldLabel = "Custom Field");
 
@@ -7024,17 +7016,9 @@ definition {
 
 		ContentPages.addPage(pageName = "Test Content Page Name");
 
-		PageEditor.addFragment(
-			collectionName = "Basic Components",
-			fragmentName = "Heading");
-
-		VisualizeObjectCollectionDisplay.openHeading();
-
-		VisualizeObjectDisplayPage.addItem(
-			frameTitle = "Select",
-			pluralLabelName = "Custom Objects 142598");
-
-		VisualizeObjectCollectionDisplay.mapFragment(fieldLabel = "Custom Field");
+		VisualizeObjectCollectionDisplay.mapFragment(
+			pluralLabelName = "Custom Objects 142598",
+			fieldLabel = "Custom Field");
 
 		PageEditor.publish();
 
