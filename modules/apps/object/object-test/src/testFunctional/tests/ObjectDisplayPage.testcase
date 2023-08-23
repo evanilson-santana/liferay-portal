@@ -24,6 +24,7 @@ definition {
 	@description = "LPS-142659 - Verify it is possible to display a specific entry of Clob type for a specific Object"
 	@priority = 4
 	test DisplaySpecificEntryClob {
+		property portal.acceptance = "evanilson";
 		ObjectAdmin.addObjectViaAPI(
 			labelName = "Custom Object 203",
 			objectName = "CustomObject203",
@@ -49,8 +50,8 @@ definition {
 		ContentPages.addPage(pageName = "Blank Page");
 
 		VisualizeObjectCollectionDisplay.mapFragment(
-			pluralLabelName = "Custom Objects 203",
-			fieldLabel = "Custom Field");
+			fieldLabel = "Custom Field",
+			pluralLabelName = "Custom Objects 203");
 
 		AssertElementPresent(
 			key_entry = "We make it possible for people to reach their full potential to serve others.",
@@ -70,6 +71,7 @@ definition {
 	@description = "LPS-136595 - Verify it is possible to display a specific entry of Picklist type for a specific Object"
 	@priority = 4
 	test DisplaySpecificEntryPicklist {
+		property portal.acceptance = "evanilson";
 		Picklist.addPicklistViaAPI(picklistName = "Picklist Test");
 
 		Picklist.addPicklistItemViaAPI(
@@ -106,8 +108,8 @@ definition {
 		ContentPages.addPage(pageName = "Blank Page");
 
 		VisualizeObjectCollectionDisplay.mapFragment(
-			pluralLabelName = "Custom Objects 204",
-			fieldLabel = "Field Picklist");
+			fieldLabel = "Field Picklist",
+			pluralLabelName = "Custom Objects 204");
 
 		AssertElementPresent(
 			key_entry = "Entry Test",

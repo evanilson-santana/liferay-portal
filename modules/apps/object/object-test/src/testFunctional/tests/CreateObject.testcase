@@ -4923,6 +4923,7 @@ definition {
 	@description = "LPS-139803 - Verify it the Object Entry Title is displayed on the Item Selector of a fragment on a Display Page"
 	@priority = 4
 	test CanViewObjectEntryTitleOnItemSelectorFragment {
+		property portal.acceptance = "evanilson";
 		ObjectAdmin.addObjectViaAPI(
 			labelName = "Custom Object 116",
 			objectName = "CustomObject116",
@@ -4961,8 +4962,8 @@ definition {
 			subtype = "Custom Object 116");
 
 		VisualizeObjectCollectionDisplay.mapFragment(
-			pluralLabelName = "Custom Objects 116",
-			fieldLabel = "Custom Field");
+			fieldLabel = "Custom Field",
+			pluralLabelName = "Custom Objects 116");
 
 		VisualizeObjectCollectionDisplay.viewMappedFragment(fieldLabel = "Custom Field");
 
@@ -5175,6 +5176,7 @@ definition {
 	@description = "LPS-139803 - Verify if the Object Entry Title is displayed when selecting to preview an object entry on a Page Template"
 	@priority = 4
 	test CanViewObjectEntryTitlePreviewOnPageTemplate {
+		property portal.acceptance = "evanilson";
 		ObjectAdmin.addObjectViaAPI(
 			labelName = "Custom Object 141623",
 			objectName = "CustomObject141623",
@@ -5213,8 +5215,8 @@ definition {
 			subtype = "Custom Object 141623");
 
 		VisualizeObjectCollectionDisplay.mapFragment(
-			pluralLabelName = "Custom Objects 141623",
-			fieldLabel = "Custom Field");
+			fieldLabel = "Custom Field",
+			pluralLabelName = "Custom Objects 141623");
 
 		VisualizeObjectCollectionDisplay.viewMappedFragment(fieldLabel = "Custom Field");
 
@@ -6992,6 +6994,7 @@ definition {
 	@description = "LPS-139005 - Verify that the Object entries are displayed again on Page fragments from an Object that was reactivated"
 	@priority = 4
 	test ObjectEntriesReappearsPageFragmentsWhenReactivated {
+		property portal.acceptance = "evanilson";
 		ObjectAdmin.addObjectViaAPI(
 			labelName = "Custom Object 142598",
 			objectName = "CustomObject142598",
@@ -7017,8 +7020,8 @@ definition {
 		ContentPages.addPage(pageName = "Test Content Page Name");
 
 		VisualizeObjectCollectionDisplay.mapFragment(
-			pluralLabelName = "Custom Objects 142598",
-			fieldLabel = "Custom Field");
+			fieldLabel = "Custom Field",
+			pluralLabelName = "Custom Objects 142598");
 
 		PageEditor.publish();
 

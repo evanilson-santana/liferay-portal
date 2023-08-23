@@ -88,6 +88,7 @@ definition {
 	@description = "LPS-133865 - Verify if the fields from an Object are displayed to be mapped on a fragment"
 	@priority = 5
 	test FieldsFromObjectDisplayedToBeMapped {
+		property portal.acceptance = "evanilson";
 		property portal.acceptance = "true";
 
 		ObjectAdmin.addObjectViaAPI(
@@ -118,8 +119,8 @@ definition {
 			pageTemplateName = "Blank Display Page");
 
 		VisualizeObjectCollectionDisplay.mapFragment(
-			pluralLabelName = "Custom Objects 300",
-			fieldLabel = "Number");
+			fieldLabel = "Number",
+			pluralLabelName = "Custom Objects 300");
 
 		VisualizeObjectCollectionDisplay.viewMappedFragment(fieldLabel = "Number");
 
@@ -162,7 +163,7 @@ definition {
 	@description = "LPS-133865 - Verify if the Object entries are rendered inside the Collection Display fragment"
 	@priority = 5
 	test ObjectEntriesAreRendered {
-		property portal.acceptance = "true";
+		property portal.acceptance = "evanilson";
 
 		ObjectAdmin.addObjectViaAPI(
 			labelName = "Custom Object 302",
@@ -194,8 +195,8 @@ definition {
 			pageTemplateName = "Blank Display Page");
 
 		VisualizeObjectCollectionDisplay.mapFragment(
-			pluralLabelName = "Custom Objects 302",
-			fieldLabel = "Text");
+			fieldLabel = "Text",
+			pluralLabelName = "Custom Objects 302");
 
 		PageEditor.publish();
 

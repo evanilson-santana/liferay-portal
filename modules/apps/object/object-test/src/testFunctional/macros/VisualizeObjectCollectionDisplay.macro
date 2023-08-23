@@ -22,7 +22,7 @@ definition {
 
 		PageEditor.editCollectionDisplay(
 			fragmentName = "Collection Display",
-			infoListProviderName = "${pluralLabelName}");
+			infoListProviderName = ${pluralLabelName});
 
 		Refresh();
 
