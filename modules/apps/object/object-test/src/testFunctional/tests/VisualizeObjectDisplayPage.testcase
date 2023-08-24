@@ -335,8 +335,8 @@ definition {
 		ContentPages.addPage(pageName = "Test Content Page Name");
 
 		VisualizeObjectCollectionDisplay.mapFragment(
-			pluralLabelName = "Custom Objects 318",
-			fieldLabel = "BigDecimal");
+			fieldLabel = "BigDecimal",
+			pluralLabelName = "Custom Objects 318");
 
 		AssertElementPresent(
 			key_entry = "123.123456",
@@ -379,8 +379,8 @@ definition {
 		ContentPages.addPage(pageName = "Test Content Page Name");
 
 		VisualizeObjectCollectionDisplay.mapFragment(
-			pluralLabelName = "Custom Objects 319",
-			fieldLabel = "Boolean");
+			fieldLabel = "Boolean",
+			pluralLabelName = "Custom Objects 319");
 
 		AssertElementPresent(
 			key_entry = "true",
@@ -423,8 +423,8 @@ definition {
 		ContentPages.addPage(pageName = "Test Content Page Name");
 
 		VisualizeObjectCollectionDisplay.mapFragment(
-			pluralLabelName = "Custom Objects 320",
-			fieldLabel = "Date");
+			fieldLabel = "Date",
+			pluralLabelName = "Custom Objects 320");
 
 		AssertElementPresent(
 			key_entry = "Jan 1, 2021",
@@ -467,8 +467,8 @@ definition {
 		ContentPages.addPage(pageName = "Test Content Page Name");
 
 		VisualizeObjectCollectionDisplay.mapFragment(
-			pluralLabelName = "Custom Objects 321",
-			fieldLabel = "Double");
+			fieldLabel = "Double",
+			pluralLabelName = "Custom Objects 321");
 
 		AssertElementPresent(
 			key_entry = "1.54",
@@ -511,8 +511,8 @@ definition {
 		ContentPages.addPage(pageName = "Test Content Page Name");
 
 		VisualizeObjectCollectionDisplay.mapFragment(
-			pluralLabelName = "Custom Objects 322",
-			fieldLabel = "Integer");
+			fieldLabel = "Integer",
+			pluralLabelName = "Custom Objects 322");
 
 		AssertElementPresent(
 			key_entry = 123456789,
@@ -555,8 +555,8 @@ definition {
 		ContentPages.addPage(pageName = "Test Content Page Name");
 
 		VisualizeObjectCollectionDisplay.mapFragment(
-			pluralLabelName = "Custom Objects 323",
-			fieldLabel = "Long");
+			fieldLabel = "Long",
+			pluralLabelName = "Custom Objects 323");
 
 		AssertElementPresent(
 			key_entry = 1234567891234567,
@@ -597,8 +597,8 @@ definition {
 			value = "Test text");
 
 		VisualizeObjectCollectionDisplay.mapFragment(
-			pluralLabelName = "Custom Objects 324",
-			fieldLabel = "String");
+			fieldLabel = "String",
+			pluralLabelName = "Custom Objects 324");
 
 		AssertElementPresent(
 			key_entry = "Test text",
@@ -697,8 +697,8 @@ definition {
 			subtype = "Custom Object 326");
 
 		VisualizeObjectCollectionDisplay.mapFragment(
-			pluralLabelName = "Custom Objects 326",
-			fieldLabel = "Field");
+			fieldLabel = "Field",
+			pluralLabelName = "Custom Objects 326");
 
 		PageEditor.selectItemToPreviewWithObject(entryValue = "Test Entry");
 
@@ -735,8 +735,8 @@ definition {
 			pageTemplateName = "Blank Display Page");
 
 		VisualizeObjectCollectionDisplay.mapFragment(
-			pluralLabelName = "Custom Objects 327",
-			fieldLabel = "Custom Field");
+			fieldLabel = "Custom Field",
+			pluralLabelName = "Custom Objects 327");
 
 		PageEditor.publish();
 
@@ -745,8 +745,8 @@ definition {
 		ContentPages.addPage(pageName = "Test Content Page Name");
 
 		VisualizeObjectCollectionDisplay.mapFragment(
-			pluralLabelName = "Custom Objects 327",
-			fieldLabel = "Custom Field");
+			fieldLabel = "Custom Field",
+			pluralLabelName = "Custom Objects 327");
 
 		Navigator.gotoNavTab(navTab = "Link");
 

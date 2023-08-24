@@ -4971,8 +4971,8 @@ definition {
 			subtype = "Custom Object 116");
 
 		VisualizeObjectCollectionDisplay.mapFragment(
-			pluralLabelName = "Custom Objects 116",
-			fieldLabel = "Custom Field");
+			fieldLabel = "Custom Field",
+			pluralLabelName = "Custom Objects 116");
 
 		VisualizeObjectCollectionDisplay.viewMappedFragment(fieldLabel = "Custom Field");
 
@@ -5223,8 +5223,8 @@ definition {
 			subtype = "Custom Object 141623");
 
 		VisualizeObjectCollectionDisplay.mapFragment(
-			pluralLabelName = "Custom Objects 141623",
-			fieldLabel = "Custom Field");
+			fieldLabel = "Custom Field",
+			pluralLabelName = "Custom Objects 141623");
 
 		VisualizeObjectCollectionDisplay.viewMappedFragment(fieldLabel = "Custom Field");
 
@@ -7027,8 +7027,8 @@ definition {
 		ContentPages.addPage(pageName = "Test Content Page Name");
 
 		VisualizeObjectCollectionDisplay.mapFragment(
-			pluralLabelName = "Custom Objects 142598",
-			fieldLabel = "Custom Field");
+			fieldLabel = "Custom Field",
+			pluralLabelName = "Custom Objects 142598");
 
 		PageEditor.publish();
 

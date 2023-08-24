@@ -49,8 +49,8 @@ definition {
 		ContentPages.addPage(pageName = "Blank Page");
 
 		VisualizeObjectCollectionDisplay.mapFragment(
-			pluralLabelName = "Custom Objects 203",
-			fieldLabel = "Custom Field");
+			fieldLabel = "Custom Field",
+			pluralLabelName = "Custom Objects 203");
 
 		AssertElementPresent(
 			key_entry = "We make it possible for people to reach their full potential to serve others.",
@@ -106,8 +106,8 @@ definition {
 		ContentPages.addPage(pageName = "Blank Page");
 
 		VisualizeObjectCollectionDisplay.mapFragment(
-			pluralLabelName = "Custom Objects 204",
-			fieldLabel = "Field Picklist");
+			fieldLabel = "Field Picklist",
+			pluralLabelName = "Custom Objects 204");
 
 		AssertElementPresent(
 			key_entry = "Entry Test",

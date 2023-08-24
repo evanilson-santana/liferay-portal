@@ -118,8 +118,8 @@ definition {
 			pageTemplateName = "Blank Display Page");
 
 		VisualizeObjectCollectionDisplay.mapFragment(
-			pluralLabelName = "Custom Objects 300",
-			fieldLabel = "Number");
+			fieldLabel = "Number",
+			pluralLabelName = "Custom Objects 300");
 
 		VisualizeObjectCollectionDisplay.viewMappedFragment(fieldLabel = "Number");
 
@@ -194,8 +194,8 @@ definition {
 			pageTemplateName = "Blank Display Page");
 
 		VisualizeObjectCollectionDisplay.mapFragment(
-			pluralLabelName = "Custom Objects 302",
-			fieldLabel = "Text");
+			fieldLabel = "Text",
+			pluralLabelName = "Custom Objects 302");
 
 		PageEditor.publish();
 
