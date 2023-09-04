@@ -4,6 +4,7 @@ definition {
 	property portal.release = "true";
 	property portal.upstream = "true";
 	property testray.main.component.name = "Object";
+	property test.liferay.virtual.instance = "false";
 
 	static var clientExtensionSamples = "";
 	static var companyWebId = "";
@@ -107,12 +108,10 @@ definition {
 		}
 	}
 
-
 	@description = "LPS-179377 - Verify an action can be created using an action client extension"
 	@priority = 5
 	test CanTriggerAction {
-		
-
+		property portal.acceptance = "evanilson";
 		task ("Given Liferay Sample Batch and Liferay Sample Etc Spring Boot are deployed into the current virtual instance") {
 			for (var clientExtension : list "liferay-sample-batch,liferay-sample-etc-spring-boot") {
 				AntCommands.runCommand("build-test-liferay-sample-workspace.xml", "deploy-workspace-client-extension -Dvirtual.instance.id=${companyWebId} -Dworkspace.client.extension.name=${clientExtension}");
@@ -144,24 +143,17 @@ definition {
 			AssertElementPresent(
 				key_entry = "Entry Updated",
 				locator1 = "ObjectPortlet#ENTRY_VALUE");
-
 		}
 
 		task ("Then the action is triggered and the object entry DTO structure is returned in the console log") {
-			
 			var objectId = JSONObject.getObjectId(objectName = "Sample");
-			
+
 			AssertConsoleTextPresent(value1 = "objectDefinitionId: ${objectId}");
-			
+
 			AssertConsoleTextPresent(value1 = "objectActionTriggerKey: onAfterUpdate");
 
 			AssertConsoleTextPresent(value1 = "values: {field1: Entry Updated}");
-
 		}
-
 	}
-
-
-
 
 }
