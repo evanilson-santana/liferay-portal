@@ -4345,6 +4345,7 @@ definition {
 		}
 	}
 
+<<<<<<< HEAD
 	@description = "Verify that the Is Not Equals to operator is available when adding filters for the integer fields to select data from the object"
 	@priority = 4
 	test IsEqualToIsAvailableForIntegerFields {
@@ -4405,6 +4406,8 @@ definition {
 				filterValue = 1);
 		}
 	}
+=======
+>>>>>>> ab669da (LPS-194538 Remove the IsEqualToIsAvailableForIntegerFields since the case is being covered by CanCreateEntryWithAggregationField)
 
 	@description = "Verify that the Is Not Equals to operator is available when adding filters for the long integer fields to select data from the object"
 	@priority = 4
