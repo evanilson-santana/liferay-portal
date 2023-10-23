@@ -1,0 +1,64 @@
+@component-name = "portal-object"
+definition {
+
+	property portal.release = "true";
+	property portal.upstream = "true";
+	property testray.main.component.name = "Object";
+
+	setUp {
+		TestCase.setUpPortalInstance();
+
+		User.firstLoginPG();
+
+        
+	}
+
+	tearDown {
+		ObjectAdmin.deleteAllCustomObjectsViaAPI();
+
+		var testLiferayVirtualInstance = PropsUtil.get("test.liferay.virtual.instance");
+
+		if (${testLiferayVirtualInstance} == "true") {
+			PortalInstances.tearDownCP();
+		}
+	}
+
+    @description = "LPS-198931 Test spike"
+	@priority = 4
+	test Testspike {
+
+		
+        task ("Given modules directories") {
+            var liferayHome = PropsUtil.get("liferay.home.dir.name");
+
+            var moduleBaseDirObjectAPI = "modules/apps/object/object-api";
+
+		    var moduleBaseDirObjectService = "modules/apps/object/object-service";
+
+        }
+      
+		task ("Given object-api and object-service modules") {
+
+            AntCommands.runCommand("build-test.xml", "deploy-osgi-module-to-specific-bundle -DliferayHome=${liferayHome} -Dmodule.base.dir=${moduleBaseDirObjectAPI}");
+
+            AntCommands.runCommand("build-test.xml", "deploy-osgi-module-to-specific-bundle -DliferayHome=${liferayHome} -Dmodule.base.dir=${moduleBaseDirObjectService}");
+
+        }
+        
+        task ("When user acess object admin page") {
+
+            ObjectAdmin.openObjectAdmin();
+
+        }
+
+        task ("Them the modifiable system object is created") {
+
+            AssertElementPresent(
+                key_name = "Modifiable",
+                key_system = "Yes",
+                locator1 = "ObjectAdmin#VIEW_OBJECT");
+
+        }
+        
+	}
+}
