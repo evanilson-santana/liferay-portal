@@ -561,6 +561,8 @@ definition {
 		property portal.version = "7.4.13.u33";
 
 		task ("View a Picklist after Upgrade") {
+			SetWindowSize.maximizeWindow();
+
 			Picklist.gotoPicklists();
 
 			WaitForElementPresent(
@@ -580,7 +582,7 @@ definition {
 			}
 		}
 
-		task ("Edit a Picklist and items") {
+		task ("Edit a Picklist and items") {	
 			SelectFrameTop();
 
 			Picklist.updatePicklistName(picklistName = "Custom Picklist Edit After Upgrade");
