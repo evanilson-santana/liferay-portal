@@ -45,6 +45,11 @@
 		<td>//div[contains(@class,'left-sidebar-current-object-folder-group')]//span[contains(@class,'c-inner') and contains(.,'${key_label}')]</td>
 		<td></td>
 	</tr>
+	<tr>
+		<td>MODEL_BUILDER_OBJECT_SIDEBAR_TREE</td>
+		<td>//li[contains(@class,'treeview-item') and div[normalize-space()='${objectLabel}']]</td>
+		<td></td>
+	</tr>
 </tbody>
 </table>
 </body>
