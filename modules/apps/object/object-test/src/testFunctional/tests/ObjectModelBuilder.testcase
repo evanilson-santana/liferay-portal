@@ -265,6 +265,63 @@ definition {
 				locator1 = "ObjectModelBuilder#OBJECT_DEFINITION_NODE",
 				objectLabel = "Custom Object 088");
 		}
+	@description = "LPS-185674 - Verify the user is able to view multiple object definitions in model builder view"
+	@priority = 4
+	test CanViewMultipleObjectDefinitions {
+		task ("Given several custom object definitions in a created folder") {
+			JSONObjectFolder.addFolder(
+				folderLabel = "Custom Folder 185674",
+				folderName = "CustomFolder185674");
+
+			ObjectAdmin.openObjectAdmin();
+
+			Click.javaScriptClick(
+				folderLabel = "Custom Folder 185674",
+				locator1 = "ObjectAdmin#SIDEBAR_ITEM");
+
+			for (var letter : list "A,B,C") {
+				ObjectAdmin.addNewObject(
+					fieldLabelName = "Custom Object 185674 ${letter}",
+					fieldName = "CustomObject185674${letter}",
+					pluralLabelName = "Custom Objects 185674 ${letter}");
+
+				ObjectAdmin.addObjectFieldViaAPI(
+					fieldBusinessType = "LongText",
+					fieldLabelName = "Custom Field",
+					fieldName = "customObjectField",
+					fieldType = "Clob",
+					isRequired = "false",
+					objectName = "CustomObject185674${letter}");
+
+				CreateObject.saveObject();
+			}
+		}
+
+		task ("When the user switches to model builder view") {
+			Click.pauseClickAt(
+				key_text = "View in Model Builder",
+				locator1 = "CustomerPortalSite#ANY_BUTTON");
+
+			Click(
+				key_nodeName = "Custom Folder 185674",
+				locator1 = "Treeview#PAGE_STRUCTURE_TREE_NODE_COLLAPSED");
+		}
+
+		task ("Then the object definitions will be listed in left sidebar") {
+			for (var letter : list "A,B,C") {
+				AssertVisible(
+					locator1 = "ObjectModelBuilder#MODEL_BUILDER_OBJECT_SIDEBAR_TREE",
+					objectLabel = "Custom Object 185674 ${letter}");
+			}
+		}
+
+		task ("and Then the object definition cards will be visible on the page") {
+			for (var letter : list "A,B,C") {
+				AssertVisible(
+					locator1 = "ObjectModelBuilder#OBJECT_DEFINITION_NODE",
+					objectLabel = "Custom Object 185674 ${letter}");
+			}
+		}
 	}
 
 }
