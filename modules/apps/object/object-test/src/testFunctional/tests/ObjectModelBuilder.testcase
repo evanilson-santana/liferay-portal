@@ -265,6 +265,8 @@ definition {
 				locator1 = "ObjectModelBuilder#OBJECT_DEFINITION_NODE",
 				objectLabel = "Custom Object 088");
 		}
+	}
+
 	@description = "LPS-185674 - Verify the user is able to view multiple object definitions in model builder view"
 	@priority = 4
 	test CanViewMultipleObjectDefinitions {
@@ -284,14 +286,6 @@ definition {
 					fieldLabelName = "Custom Object 185674 ${letter}",
 					fieldName = "CustomObject185674${letter}",
 					pluralLabelName = "Custom Objects 185674 ${letter}");
-
-				ObjectAdmin.addObjectFieldViaAPI(
-					fieldBusinessType = "LongText",
-					fieldLabelName = "Custom Field",
-					fieldName = "customObjectField",
-					fieldType = "Clob",
-					isRequired = "false",
-					objectName = "CustomObject185674${letter}");
 
 				CreateObject.saveObject();
 			}
