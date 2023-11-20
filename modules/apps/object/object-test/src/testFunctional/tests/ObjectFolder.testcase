@@ -55,11 +55,11 @@ definition {
 
 			ObjectModelBuilder.openObjectFolderInModelBuilder(objectFolderName = "FolderA");
 
-			Click(
+			Click.javaScriptClick(
 				key_folderName = "Folder B",
 				locator1 = "ObjectAdmin#GO_TO_FOLDER");
 
-			Click(
+			Click.javaScriptClick(
 				locator1 = "Treeview#NODE_COLLAPSED",
 				value1 = "Folder A");
 
