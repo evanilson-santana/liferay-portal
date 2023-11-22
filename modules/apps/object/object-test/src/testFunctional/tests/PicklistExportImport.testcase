@@ -58,7 +58,9 @@ definition {
 		task ("Then the user can add an object entry") {
 			ObjectAdmin.goToCustomObject(objectName = "CustomObject193860");
 
-			ObjectAdmin.addObjectPicklistFieldEntryViaUI(picklistOption = "Picklist Item 1");
+			ObjectAdmin.addObjectPicklistFieldEntryViaUI(
+				labelName = "Field Picklist",
+				picklistOption = "Picklist Item 1");
 
 			ObjectAdmin.goToCustomObject(objectName = "CustomObject193860");
 
