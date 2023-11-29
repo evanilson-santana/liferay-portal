@@ -27,18 +27,35 @@ definition {
 
 		MenuItem.click(menuItem = "Import Object Definition");
 
-		var filePath = TestCase.getDependenciesDirPath(fileName = "${objectFileName}.json");
+		if (isSet(tempFile) && (${tempFile} == "true")) {
+			var tempFileName = TestCase.getDownloadedTempFileName(fileNamePattern = "Object_${objectName}*.json");
+			var tempFileDirectory = selenium.getOutputDirName();
 
-		UploadFile(
-			locator1 = "TextInput#FILE",
-			value1 = ${filePath});
+			UploadFile(
+				locator1 = "TextInput#FILE",
+				value1 = "${tempFileDirectory}/${tempFileName}");
 
-		Type(
-			key_fieldLabel = "Name",
-			locator1 = "TextInput#GENERIC_TEXT_INPUT",
-			value1 = ${objectName});
+			Type(
+				key_fieldLabel = "Name",
+				locator1 = "TextInput#GENERIC_TEXT_INPUT",
+				value1 = ${objectName});
 
-		Button.clickImport();
+			Button.clickImport();
+		}
+		else {
+			var filePath = TestCase.getDependenciesDirPath(fileName = "${objectFileName}.json");
+
+			UploadFile(
+				locator1 = "TextInput#FILE",
+				value1 = ${filePath});
+
+			Type(
+				key_fieldLabel = "Name",
+				locator1 = "TextInput#GENERIC_TEXT_INPUT",
+				value1 = ${objectName});
+
+			Button.clickImport();
+		}
 	}
 
 }
